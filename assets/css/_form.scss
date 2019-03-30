@@ -46,7 +46,24 @@
 
     .form-group {
       flex-basis: 100%;
-      padding: 0;
+      padding: $size3 0;
     }
   }
+}
+
+.checkbox-control {
+  display: none;
+}
+
+.checkbox-control:checked ~ .content-block .fa-plus,
+.checkbox-control ~ .content-block .fa-minus{
+  display: block;
+}
+.checkbox-control ~ .content-block .fa-plus,
+.checkbox-control:checked ~ .content-block .fa-minus{
+  display: none;
+}
+
+.checkbox-control:checked ~ .content-block .content-block-form{
+  display: none;
 }

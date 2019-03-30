@@ -6,12 +6,16 @@
         <p class="paragraph">Select your tokens</p>
       </div>
 
-      <div class="form-group-block">
+      <!-- <div class="form-group-block">
         <div class="box-subtitle">
           <button class="btn btn-square-sm btn-default">-</button>
           <span class="subtitle">Font Family</span>
         </div>
-        <div class="form-content" v-for="(font, index) in $store.state.fontFamily" v-bind:key="index">
+        <div
+          class="form-content"
+          v-for="(font, index) in $store.state.fontFamily"
+          v-bind:key="index"
+        >
           <div class="form-group">
             <label class="label-control">Font Family value</label>
             <input type="text" class="form-control" v-model="font.value">
@@ -26,29 +30,40 @@
           <button class="btn btn-square-sm">+</button>
           <span class="text-bold">New Font Family</span>
         </div>
-      </div>
+      </div>-->
 
-      <div class="space"></div>
+      <div class="form-group-block" v-for="(items, index) in $store.state" v-bind:key="index">
+        <input type="checkbox" class="checkbox-control" :id="index">
 
-      <div class="form-group-block">
-        <div class="box-subtitle">
-          <button class="btn btn-square-sm btn-default">-</button>
-          <span class="subtitle">Font Size</span>
-        </div>
-        <div class="form-content" v-for="(font, index) in $store.state.fontSize" v-bind:key="index">
-          <div class="form-group">
-            <label class="label-control">Font Size value</label>
-            <input type="number" class="form-control" v-model="font.value">
+        <div class="content-block">
+          <label :for="index" class="box-subtitle">
+            <button class="btn btn-square-sm btn-default">
+              <i class="fas fa-minus"></i>
+              <i class="fas fa-plus"></i>
+            </button>
+            <span class="subtitle">{{items.config.name}}</span>
+          </label>
+
+          <div class="content-block-form">
+            <div class="form-content" v-for="(x, key, index) in items.list" v-bind:key="index">
+              <div class="form-group">
+                <label class="label-control">Font Size token</label>
+                <input type="text" class="form-control" v-model="x.token">
+              </div>
+
+              <div class="form-group">
+                <label class="label-control">Font Size value</label>
+                <input type="text" class="form-control" v-model="x.value">
+              </div>
+            </div>
+
+            <div class="box-download">
+              <button class="btn btn-square-sm">+</button>
+              <span class="text-bold">New Font Size</span>
+            </div>
+          <div class="space"></div>
           </div>
 
-          <div class="form-group">
-            <label class="label-control">Font Size token</label>
-            <input type="text" class="form-control" v-model="font.token">
-          </div>
-        </div>
-        <div class="box-download">
-          <button class="btn btn-square-sm">+</button>
-          <span class="text-bold">New Font Size</span>
         </div>
       </div>
     </div>
@@ -60,9 +75,6 @@ import { mapState } from "vuex";
 export default {
   data() {
     return {};
-  },
-  computed: {
-    ...mapState(["fontFamily", "fontSize"])
   }
 };
 </script>
