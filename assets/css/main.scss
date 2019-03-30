@@ -1,3 +1,6 @@
-body {
-  background: red;
-}
+@import 'variables.scss';
+@import 'reset.scss';
+@import 'text.scss';
+@import 'buttons.scss';
+@import 'form.scss';
+

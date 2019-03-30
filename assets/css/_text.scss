@@ -1,0 +1,51 @@
+.box-title {
+  width: 100%;
+  margin-bottom: $size6;
+  display: flex;
+  align-items: baseline;
+  flex-direction: column;
+}
+
+.box-subtitle {
+  width: 100%;
+  margin-bottom: $size3;
+  margin-left: -$size5;
+  display: flex;
+  align-items: baseline;
+}
+
+.box-download {
+  width: 100%;
+  margin-top: -$size3;
+  margin-bottom: 0;
+  display: flex;
+  align-items: baseline;
+}
+
+.btn-square-sm {
+  margin-right: $size2;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+}
+
+.subtitle {
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: $size4;
+}
+
+.paragraph {
+  font-size: 14px;
+  opacity: .5;
+  line-height: 2;
+}
+
+.space {
+  padding: $size7 0;
+  width: 100%;
+}
