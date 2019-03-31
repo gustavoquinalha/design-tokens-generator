@@ -1,6 +1,6 @@
 # Design tokens generator
 
-> My posh Nuxt.js project
+> Design tokens are the minimum elements of the design system
 
 ## Build Setup
 
@@ -8,7 +8,7 @@
 # install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:3000/design-tokens-generator/
 $ yarn run dev
 
 # build for production and launch server
@@ -22,4 +22,8 @@ $ yarn run generate
 $ yarn deploy
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+# Inspirate by
+- https://shopify.github.io/polaris-tokens/
+- https://www.lightningdesignsystem.com/design-tokens/
+- https://protocol.mozilla.org/fundamentals/tokens.html
+- https://design.bitnami.com/category/Design-Tokens/

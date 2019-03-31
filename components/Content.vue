@@ -12,18 +12,19 @@
                 <div class="checkbox" :class="{active : names.config.status}">{{names.config.name}}</div>
               </div>
             </div>
+            <button class="btn btn-outline btn-checkbox"><i class="fas fa-plus icon-margin-right"></i> New Token</button>
           </div>
         </div>
       </div>
 
       <div class="form-group-block" v-for="(items, index) in $store.state" v-bind:key="index">
         <div class="content-block">
-          <div class="box-subtitle" @click="items.config.status = !items.config.status">
-            <button class="btn btn-square-sm btn-default">
+          <div class="box-subtitle">
+            <button class="btn btn-square-sm btn-default" @click="items.config.status = !items.config.status">
               <i class="fas fa-minus" v-show="items.config.status"></i>
               <i class="fas fa-plus" v-show="!items.config.status"></i>
             </button>
-            <span class="subtitle">
+            <span class="subtitle" @click="items.config.status = !items.config.status">
               {{items.config.name}}
             </span>
           </div>

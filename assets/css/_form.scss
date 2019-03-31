@@ -99,16 +99,30 @@
   color: $black;
   padding: 0 20px;
   outline: none;
-  border: 2px solid $black;
+  border: 2px solid $grey;
   will-change: contents;
   margin: $size1;
 
   &:hover {
-    transform: scale(1.1, 1.1)
+    // transform: scale(1.1, 1.1);
+    border-color: $black;
   }
 
   &.active {
     background: $black;
     color: $white;
   }
+}
+
+.btn-checkbox {
+  margin: $size1;
+}
+
+.icon-margin-right {
+  margin-right: $size2;
+}
+
+.btn .fas,
+.btn .far {
+  font-size: 12px;
 }

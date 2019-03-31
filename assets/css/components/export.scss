@@ -1,0 +1,136 @@
+
+@import "~/assets/css/_variables.scss";
+
+.box-title {
+  margin-bottom: 24px;
+}
+
+.export {
+  flex-basis: 30%;
+  position: relative;
+  overflow: hidden;
+}
+
+// .btn-copy {
+//   position: absolute;
+//   top: $size7;
+//   right: $size2;
+//   font-size: 12px;
+//   padding: 0 16px;
+//   z-index: 900;
+//   transition: 0.3s;
+// }
+
+.btn-copy,
+.btn-export {
+  &:after {
+    content: "Copied!";
+    position: absolute;
+    right: 0;
+    top: 12px;
+    margin-right: $size2;
+    transition: 0.3s;
+    opacity: 0;
+    color: $white;
+  }
+  &.copied {
+    &:after {
+      opacity: 1;
+      right: 100%;
+    }
+  }
+}
+
+.export-block {
+  position: relative;
+  border-radius: $radius;
+  padding: $size6;
+  background: $black;
+  color: $white;
+  height: calc(100vh - #{$menu-height} - #{$footer-height} - 40px);
+  transition: 0.3s;
+  overflow: auto;
+  .copy-block {
+    position: relative;
+  }
+
+  .feedback-copy {
+    margin-right: $size2;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: lighten($black, 40);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: lighten($black, 20);
+    transition: 0.3s;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten($black, 30);
+  }
+}
+
+.top-sticky {
+  .export-block {
+    height: calc(100vh - #{$menu-height} - #{$footer-height} + 40px);
+  }
+}
+
+.box-export {
+  position: relative;
+  .btn {
+    position: absolute;
+    bottom: $size1;
+    right: $size2;
+    margin: $size2;
+    padding: 0 16px;
+    &:hover {
+      transform: none;
+      background: $white;
+      color: $black;
+      border-color: $white;
+    }
+  }
+}
+.code {
+  display: block;
+  margin-bottom: $size4;
+}
+
+@media (max-width: $media-query-large) {
+  .export {
+    flex-basis: 100%;
+  }
+  .top-sticky,
+  .top-sticky .export-block,
+  .export-block {
+    height: 50vh;
+    padding: $size3;
+  }
+}
+
+@media (max-width: $media-query-medium) {
+  .vue-sticky-placeholder {
+    height: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .vue-sticky-el,
+  .top-sticky {
+    position: relative !important;
+    top: initial !important;
+    bottom: initial !important;
+    left: initial !important;
+    right: initial !important;
+  }
+
+  .export {
+    padding: 0 $size4;
+  }
+}

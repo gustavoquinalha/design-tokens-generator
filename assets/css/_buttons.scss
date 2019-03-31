@@ -21,8 +21,14 @@
   border: 2px solid $black;
   will-change: contents;
 
+  &.btn-outline {
+    background: $white;
+    color: $black;
+    border: 2px solid $black;
+  }
+
   &:hover {
-    transform: scale(1.15, 1.15)
+    transform: scale(1.1, 1.1);
   }
 
   &.btn-white {

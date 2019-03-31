@@ -16,15 +16,21 @@ export default {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'description',
-        name: 'description',
+        hid: 'Design tokens are the minimum elements of the design system',
+        name: 'Design tokens are the minimum elements of the design system',
         content: 'Design Tokens Generator'
       }
     ],
     link: [{
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico'
+        href: '/design-tokens-generator/favicon.ico'
+      },
+      {
+        rel: 'shortcut icon',
+        href: '/design-tokens-generator/favicon.ico',
+        type: 'image/x-icon'
+
       },
       {
         rel: 'stylesheet',
@@ -39,7 +45,7 @@ export default {
         href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
         integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',
         crossorigin: 'anonymous'
-      },
+      }
     ]
   },
 

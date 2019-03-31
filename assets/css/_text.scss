@@ -12,10 +12,15 @@
   margin-left: -$size5;
   display: flex;
   align-items: baseline;
-  cursor: pointer;
+
+  span {
+    cursor: pointer;
+
+  }
 
   &:hover {
     font-weight: bold;
+
     .btn {
       background: lighten($grey, 5);
     }
