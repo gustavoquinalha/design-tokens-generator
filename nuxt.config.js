@@ -7,7 +7,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: 'Design Tokens Generator',
     meta: [{
         charset: 'utf-8'
       },
@@ -18,7 +18,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: pkg.description
+        content: 'Design Tokens Generator'
       }
     ],
     link: [{

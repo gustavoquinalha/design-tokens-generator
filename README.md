@@ -1,4 +1,4 @@
-# design-tokens-generator
+# Design tokens generator
 
 > My posh Nuxt.js project
 
@@ -17,6 +17,9 @@ $ yarn start
 
 # generate static project
 $ yarn run generate
+
+# deploy to github pages
+$ yarn deploy
 ```
 
 For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
