@@ -64,13 +64,16 @@ export default {
     src: '~/plugins/vue-sticky',
     ssr: false
   }],
-
+  router: {
+    base: '/design-tokens-generator/'
+  },
   /*
    ** Nuxt.js modules
    */
   modules: [
     ['nuxt-sass-resources-loader', '@/assets/css/_variables.scss']
   ],
+
   node: {
     fs: 'empty'
   },
