@@ -1,6 +1,8 @@
 .form-group {
   display: flex;
   flex-direction: column;
+  max-width: 100%;
+  width: 100%;
 }
 
 .form-content {
@@ -27,6 +29,7 @@
   padding: 0 $size3;
   outline-color: $black;
   font-size: 16px;
+  width: 100%;
 }
 
 .form-group-block {
@@ -55,15 +58,57 @@
   display: none;
 }
 
-.checkbox-control:checked ~ .content-block .fa-plus,
-.checkbox-control ~ .content-block .fa-minus{
+.checkbox-control:checked~.content-block .fa-plus,
+.checkbox-control~.content-block .fa-minus {
   display: block;
 }
-.checkbox-control ~ .content-block .fa-plus,
-.checkbox-control:checked ~ .content-block .fa-minus{
+
+.checkbox-control~.content-block .fa-plus,
+.checkbox-control:checked~.content-block .fa-minus {
   display: none;
 }
 
-.checkbox-control:checked ~ .content-block .content-block-form{
+.checkbox-control:checked~.content-block .content-block-form {
   display: none;
+}
+
+.box-content .form-group-block:last-child .space {
+  display: none;
+}
+
+.container-checkbox {
+  margin-bottom: $size7;
+}
+
+.container-checkbox .checkbox {
+  cursor: pointer;
+  font-size: 14px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  border-radius: $radius;
+  white-space: nowrap;
+  font-weight: 700;
+  vertical-align: middle;
+  user-select: none;
+  background: $white;
+  color: $black;
+  padding: 0 20px;
+  outline: none;
+  border: 2px solid $black;
+  will-change: contents;
+  margin: $size1;
+
+  &:hover {
+    transform: scale(1.1, 1.1)
+  }
+
+  &.active {
+    background: $black;
+    color: $white;
+  }
 }

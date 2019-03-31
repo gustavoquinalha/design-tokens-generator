@@ -1,6 +1,8 @@
 <template>
   <div class="footer container align-center">
-    <div class="size margin">footer</div>
+    <div class="size margin">
+      <p class="">Created with	💖</p>
+    </div>
   </div>
 </template>
 

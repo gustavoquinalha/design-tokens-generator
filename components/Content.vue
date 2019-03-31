@@ -1,50 +1,34 @@
 <template>
   <div class="content">
     <div class="box-content">
-      <div class="box-title">
-        <span class="title">Design Tokens</span>
-        <p class="paragraph">Select your tokens</p>
+
+      <div class>
+        <div class="box-title">
+          <span class="title">Design Tokens</span>
+          <p class="paragraph">Select your tokens</p>
+          <div class="container container-checkbox wrap">
+            <div class v-for="(names, index) in $store.state" v-bind:key="index" >
+              <div @click="names.config.status = !names.config.status">
+                <div class="checkbox" :class="{active : names.config.status}">{{names.config.name}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- <div class="form-group-block">
-        <div class="box-subtitle">
-          <button class="btn btn-square-sm btn-default">-</button>
-          <span class="subtitle">Font Family</span>
-        </div>
-        <div
-          class="form-content"
-          v-for="(font, index) in $store.state.fontFamily"
-          v-bind:key="index"
-        >
-          <div class="form-group">
-            <label class="label-control">Font Family value</label>
-            <input type="text" class="form-control" v-model="font.value">
-          </div>
-
-          <div class="form-group">
-            <label class="label-control">Font Family token</label>
-            <input type="text" class="form-control" v-model="font.token">
-          </div>
-        </div>
-        <div class="box-download">
-          <button class="btn btn-square-sm">+</button>
-          <span class="text-bold">New Font Family</span>
-        </div>
-      </div>-->
-
       <div class="form-group-block" v-for="(items, index) in $store.state" v-bind:key="index">
-        <input type="checkbox" class="checkbox-control" :id="index">
-
         <div class="content-block">
-          <label :for="index" class="box-subtitle">
+          <div class="box-subtitle" @click="items.config.status = !items.config.status">
             <button class="btn btn-square-sm btn-default">
-              <i class="fas fa-minus"></i>
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-minus" v-show="items.config.status"></i>
+              <i class="fas fa-plus" v-show="!items.config.status"></i>
             </button>
-            <span class="subtitle">{{items.config.name}}</span>
-          </label>
+            <span class="subtitle">
+              {{items.config.name}}
+            </span>
+          </div>
 
-          <div class="content-block-form">
+          <div class="content-block-form" v-show="items.config.status">
             <div class="form-content" v-for="(x, key, index) in items.list" v-bind:key="index">
               <div class="form-group">
                 <label class="label-control">{{items.config.name}} token</label>
@@ -58,12 +42,11 @@
             </div>
 
             <div class="box-download">
-              <button class="btn btn-square-sm">+</button>
+              <span class="btn-more">+</span>
               <span class="text-bold">New {{items.config.name}}</span>
             </div>
 
             <div class="space"></div>
-
           </div>
         </div>
       </div>

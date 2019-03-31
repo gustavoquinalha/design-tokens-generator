@@ -2041,9 +2041,9 @@ coffee-loader@^0.9.0:
     loader-utils "^1.0.2"
 
 coffeescript@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/coffeescript/-/coffeescript-2.3.2.tgz#e854a7020dfe47b7cf4dd412042e32ef1e269810"
-  integrity sha512-YObiFDoukx7qPBi/K0kUKyntEZDfBQiqs/DbrR1xzASKOBjGT7auD85/DiPeRr9k++lRj7l3uA9TNMLfyfcD/Q==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/coffeescript/-/coffeescript-2.4.0.tgz#6b754113ec488f73aa501bee30f2c05ee12c7213"
+  integrity sha512-VIAMBUX0vrQwCr9nSbQ63G1j0Ys8wGZg5x5jXRcRodm6b07TIFLaVe1QvPS9Qk/m1uwPcAZn8kJMf4aXhScBxQ==
 
 collection-visit@^1.0.0:
   version "1.0.0"
@@ -3354,6 +3354,11 @@ fs.realpath@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
+
+fs@^0.0.1-security:
+  version "0.0.1-security"
+  resolved "https://registry.yarnpkg.com/fs/-/fs-0.0.1-security.tgz#8a7bd37186b6dddf3813f23858b57ecaaf5e41d4"
+  integrity sha1-invTcYa23d84E/I4WLV+yq9eQdQ=
 
 fsevents@^1.2.7:
   version "1.2.7"

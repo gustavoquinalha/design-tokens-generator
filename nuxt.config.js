@@ -47,7 +47,7 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#000'
   },
 
   /*
@@ -60,9 +60,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    { src: '~/plugins/vue-sticky', ssr: false }
-  ],
+  plugins: [{
+    src: '~/plugins/vue-sticky',
+    ssr: false
+  }],
 
   /*
    ** Nuxt.js modules
@@ -70,7 +71,9 @@ export default {
   modules: [
     ['nuxt-sass-resources-loader', '@/assets/css/_variables.scss']
   ],
-
+  node: {
+    fs: 'empty'
+  },
   /*
    ** Build configuration
    */

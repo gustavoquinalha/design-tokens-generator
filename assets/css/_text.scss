@@ -13,6 +13,13 @@
   display: flex;
   align-items: baseline;
   cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+    .btn {
+      background: lighten($grey, 5);
+    }
+  }
 }
 
 .box-download {
@@ -21,6 +28,26 @@
   margin-bottom: 0;
   display: flex;
   align-items: baseline;
+  cursor: pointer;
+  transition: .3s;
+
+  .btn-more {
+    font-size: 14px;
+    background: $black;
+    color: $white;
+    width: $size4;
+    height: $size4;
+    border-radius: $radius;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: $size2;
+    font-weight: bold;
+  }
+
+  &:hover {
+    font-weight: bold;
+  }
 }
 
 .btn-square-sm {

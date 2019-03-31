@@ -6,24 +6,24 @@
 
     <div v-sticky sticky-offset="offset">
       <div class="export-block">
-        <button class="btn btn-copy">
+        <button class="btn btn-copy" @click="copy()">
           <i class="fas fa-copy"></i>
         </button>
-        <code class="code" v-for="(items, index) in $store.state" v-bind:key="index">
-          {{'//' + items.config.name}}
-          <div v-for="(x, index) in items.list" v-bind:key="index">
-            ${{x.token}}: {{x.value}};
-            <br>
-          </div>
-        </code>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore commodi harum vero quas quibusdam non distinctio dicta autem? Animi aut quasi aliquam itaque vitae quo sed nesciunt laborum enim.
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit inventore commodi harum vero quas quibusdam non distinctio dicta autem? Animi aut quasi aliquam itaque vitae quo sed nesciunt laborum enim.
+        <div id="divContent">
+          <code class="code" v-for="(items, index) in $store.state" v-bind:key="index">
+            {{'//' + items.config.name}}
+            <div v-for="(x, index) in items.list" v-bind:key="index">
+              ${{x.token}}: {{x.value}};
+              <br>
+            </div>
+          </code>
+        </div>
       </div>
       <div class="box-export container justify-content-end">
-        <button class="btn btn-outline">
+        <!-- <button class="btn btn-outline">
           <i class="fas fa-image"></i>
-        </button>
-        <button class="btn">Exportar</button>
+        </button>-->
+        <button class="btn" @click="exportSass()">Export SASS</button>
       </div>
     </div>
   </div>
@@ -39,6 +39,39 @@ export default {
       return {
         top: 80
       };
+    }
+  },
+  methods: {
+    exportSass() {
+      // var fs = require("fs");
+      //
+      // fs.writeFile("newfile.txt", "Learn Node FS module", function(err) {
+      //   if (err) throw err;
+      //   console.log("File is created successfully.");
+      // });
+    },
+
+    copy() {
+      var elm = document.getElementById("divContent");
+      // for Internet Explorer
+
+      if (document.body.createTextRange) {
+        var range = document.body.createTextRange();
+        range.moveToElementText(elm);
+        range.select();
+        document.execCommand("Copy");
+        alert("Copied");
+      } else if (window.getSelection) {
+        // other browsers
+
+        var selection = window.getSelection();
+        var range = document.createRange();
+        range.selectNodeContents(elm);
+        selection.removeAllRanges();
+        selection.addRange(range);
+        document.execCommand("Copy");
+        alert("Copied");
+      }
     }
   }
 };
@@ -65,8 +98,7 @@ export default {
   position: relative;
   height: calc(100vh - #{$menu-height} - #{$footer-height} - 80px);
   transition: 0.3s;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
   .btn-copy {
     position: absolute;
     right: $size1;
@@ -75,7 +107,7 @@ export default {
   }
 
   &::-webkit-scrollbar {
-    width: 1rem;
+    width: 0.5rem;
   }
 
   &::-webkit-scrollbar-track {
@@ -92,10 +124,26 @@ export default {
   }
 }
 
+.box-export {
+  .btn {
+    margin: $size1;
+  }
+}
+.code {
+  display: block;
+  margin-bottom: $size4;
+}
+
+@media (max-width: $media-query-large) {
+  .export {
+    flex-basis: 100%;
+  }
+}
+
 @media (max-width: $media-query-medium) {
   .export-block {
     height: 50vh;
-    background: red;
+    padding: $size3;
   }
 
   .vue-sticky-placeholder {
@@ -111,31 +159,7 @@ export default {
     left: initial !important;
     right: initial !important;
   }
-}
-.box-export {
-  // position: absolute;
-  // right: $size1;
-  // bottom: $size1;
-  .btn {
-    margin: $size1;
-  }
-}
 
-.code {
-  display: block;
-  margin-bottom: $size4;
-}
-
-@media (max-width: $media-query-large) {
-  .export {
-    flex-basis: 100%;
-  }
-}
-.code {
-  margin-bottom: $size4;
-}
-
-@media (max-width: $media-query-medium) {
   .export {
     padding: 0 $size4;
   }

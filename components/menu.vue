@@ -5,7 +5,11 @@
         <div class="menu__logo">
           <b>Design Tokens Generator</b>
         </div>
-        <div class="menu__links">2</div>
+        <div class="menu__links">
+          <a href="https://github.com/gustavoquinalha/design-tokens-generator" target="_blank" class="btn btn-white btn-outline">
+          Github
+          </a>
+        </div>
       </div>
     </div>
   </div>
