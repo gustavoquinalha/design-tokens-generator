@@ -1,35 +1,20 @@
 <template>
   <div class="content">
     <div class="box-content">
-
-      <div class>
-        <div class="box-title">
-          <span class="title">Design Tokens</span>
-          <p class="paragraph">Select your tokens</p>
-          <div class="container container-checkbox wrap">
-            <div class v-for="(names, index) in $store.state" v-bind:key="index" >
-              <div @click="names.config.status = !names.config.status">
-                <div class="checkbox" :class="{active : names.config.status}">{{names.config.name}}</div>
-              </div>
-            </div>
-            <button class="btn btn-outline btn-checkbox"><i class="fas fa-plus icon-margin-right"></i> New Token</button>
-          </div>
-        </div>
-      </div>
+      <Checkbox/>
 
       <div class="form-group-block" v-for="(items, index) in $store.state" v-bind:key="index">
-        <div class="content-block">
-          <div class="box-subtitle">
-            <button class="btn btn-square-sm btn-default" @click="items.config.status = !items.config.status">
-              <i class="fas fa-minus" v-show="items.config.status"></i>
-              <i class="fas fa-plus" v-show="!items.config.status"></i>
+        <div class="content-block" v-show="items.config.status">
+          <input type="checkbox" class="checkbox-control" :id="'label-' + index">
+          <label class="box-subtitle" :for="'label-' + index">
+            <button class="btn btn-square-sm btn-default">
+              <i class="fas fa-minus"></i>
+              <i class="fas fa-plus"></i>
             </button>
-            <span class="subtitle" @click="items.config.status = !items.config.status">
-              {{items.config.name}}
-            </span>
-          </div>
+            <span class="subtitle">{{items.config.name}}</span>
+          </label>
 
-          <div class="content-block-form" v-show="items.config.status">
+          <div class="content-block-form">
             <div class="form-content" v-for="(x, key, index) in items.list" v-bind:key="index">
               <div class="form-group">
                 <label class="label-control">{{items.config.name}} token</label>
@@ -57,9 +42,13 @@
 
 <script>
 import { mapState } from "vuex";
+import Checkbox from "~/components/Checkbox.vue";
 export default {
   data() {
     return {};
+  },
+  components: {
+    Checkbox
   }
 };
 </script>

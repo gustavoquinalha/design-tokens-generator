@@ -3,11 +3,18 @@
     <div class="menu">
       <div class="menu__block size margin container align-items-center justify-content-between">
         <div class="menu__logo">
-          <b>Design Tokens Generator</b>
+          <a href="https://quinalha.me/design-tokens-generator/" target="_blank">
+            <b>Design Tokens Generator</b>
+          </a>
         </div>
         <div class="menu__links">
-          <a href="https://github.com/gustavoquinalha/design-tokens-generator" target="_blank" class="btn btn-white btn-outline">
-          Github
+          <a
+            href="https://github.com/gustavoquinalha/design-tokens-generator"
+            target="_blank"
+            class="btn btn-white btn-outline"
+          >
+            <span class="text">Github</span>
+            <i class="fab fa-github"></i>
           </a>
         </div>
       </div>
@@ -17,6 +24,11 @@
 
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
+
+a {
+  color: $white;
+  text-decoration: none;
+}
 
 .menu__relative {
   height: $menu-height;
@@ -34,5 +46,17 @@
 
 .menu__block {
   height: $menu-height;
+}
+
+.fa-github {
+  display: none;
+}
+@media (max-width: $media-query-medium) {
+  .fa-github {
+    display: block;
+  }
+  .btn .text {
+    display: none;
+  }
 }
 </style>

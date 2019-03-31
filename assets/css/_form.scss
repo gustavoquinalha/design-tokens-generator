@@ -58,22 +58,18 @@
   display: none;
 }
 
-.checkbox-control:checked~.content-block .fa-plus,
-.checkbox-control~.content-block .fa-minus {
+.checkbox-control:checked~.content-block-form {
+  display: none;
+}
+
+.checkbox-control:checked~label .fa-minus,
+.checkbox-control~label .fa-plus {
+  display: none;
+}
+
+.checkbox-control:checked~label .fa-plus,
+.checkbox-control~label .fa-minus {
   display: block;
-}
-
-.checkbox-control~.content-block .fa-plus,
-.checkbox-control:checked~.content-block .fa-minus {
-  display: none;
-}
-
-.checkbox-control:checked~.content-block .content-block-form {
-  display: none;
-}
-
-.box-content .form-group-block:last-child .space {
-  display: none;
 }
 
 .container-checkbox {

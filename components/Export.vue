@@ -5,10 +5,6 @@
     </div>
 
     <div v-sticky sticky-offset="offset" style="overflow: hidden">
-      <!-- <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
-        <i class="fas fa-copy"></i>
-      </button>-->
-
       <div class="export-block">
         <div id="divContent">
           <code class="code" v-for="(items, index) in $store.state" v-bind:key="index">
@@ -22,7 +18,6 @@
       </div>
 
       <div class="box-export container justify-content-end">
-        <!-- <button class="btn" :class="{copied: copied}" @click="copy()">Export SASS</button> -->
         <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
           <i class="fas fa-copy"></i>
         </button>
@@ -82,5 +77,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/css/components/export.scss";
-
 </style>
