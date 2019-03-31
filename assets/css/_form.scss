@@ -20,6 +20,7 @@
 .label-control {
   margin-bottom: $size2;
   font-weight: bold;
+  color: $black;
 }
 
 .form-control {
@@ -30,6 +31,8 @@
   outline-color: $black;
   font-size: 16px;
   width: 100%;
+  background: $white;
+  color: $black;
 }
 
 .form-group-block {
@@ -100,7 +103,6 @@
   margin: $size1;
 
   &:hover {
-    // transform: scale(1.1, 1.1);
     border-color: $black;
   }
 
@@ -121,4 +123,14 @@
 .btn .fas,
 .btn .far {
   font-size: 12px;
+}
+
+.alert {
+  border: 2px solid $black;
+  background: $black;
+  color: $white;
+  padding: $size3;
+  border-radius: $radius;
+  transition: .3s;
+  font-weight: bold;
 }

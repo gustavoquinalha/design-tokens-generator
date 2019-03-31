@@ -36,6 +36,8 @@
           </div>
         </div>
       </div>
+
+      <div class="alert">You must select a token to continue.</div>
     </div>
   </div>
 </template>
@@ -54,33 +56,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/css/_variables.scss";
-
-.content {
-  flex-basis: 70%;
-  padding-right: $size6;
-}
-
-.box-content {
-  box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.16);
-  background: $white;
-  border-radius: $radius;
-  padding: $size7;
-  height: 100%;
-}
-
-@media (max-width: $media-query-large) {
-  .content {
-    flex-basis: 100%;
-    padding-right: 0;
-    margin-bottom: $size6;
-  }
-}
-
-@media (max-width: $media-query-medium) {
-  .box-content {
-    padding: $size4;
-    box-shadow: none;
-  }
-}
+@import "~/assets/css/components/content.scss";
 </style>

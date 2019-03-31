@@ -27,11 +27,14 @@
     content: "Copied!";
     position: absolute;
     right: 0;
-    top: 12px;
+    top: 2px;
     margin-right: $size2;
     transition: 0.3s;
     opacity: 0;
-    color: $white;
+    color: $black;
+    background: $white;
+    padding: $size2;
+    border-radius: $radius;
   }
   &.copied {
     &:after {

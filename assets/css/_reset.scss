@@ -16,6 +16,10 @@ html {
   box-sizing: border-box;
 }
 
+body {
+  background: $white;
+}
+
 .size {
   width: 1366px;
   max-width: 90%;

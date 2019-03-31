@@ -4,6 +4,7 @@
   display: flex;
   align-items: baseline;
   flex-direction: column;
+  color: $black;
 }
 
 .box-subtitle {
@@ -12,6 +13,7 @@
   margin-left: -$size5;
   display: flex;
   align-items: baseline;
+  color: $black;
 
   span {
     cursor: pointer;
@@ -35,6 +37,7 @@
   align-items: baseline;
   cursor: pointer;
   transition: .3s;
+  color: $black;
 
   .btn-more {
     font-size: 14px;

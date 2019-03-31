@@ -10,8 +10,8 @@
 @import "~/assets/css/_variables.scss";
 
 .footer {
-  background: $black;
-  color: $white;
+  background: $white;
+  color: $black;
   height: $footer-height;
 }
 </style>
