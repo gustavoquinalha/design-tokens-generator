@@ -4,20 +4,17 @@ export const state = () => ({
     config: {
       name: 'Font Family'
     },
-    list: [
-      {
-        token: 'font-family-01',
-        value: 'Roboto, sans-serif'
-      }
-    ]
+    list: [{
+      token: 'font-family-01',
+      value: 'Roboto, sans-serif'
+    }]
   },
 
   fontSize: {
     config: {
       name: 'Font Size'
     },
-    list: [
-      {
+    list: [{
         token: 'font-size-01',
         value: 62
       },
@@ -48,7 +45,6 @@ export const state = () => ({
     ]
   },
 
-
   lineHeight: {
     config: {
       name: 'Line Height'
@@ -60,6 +56,43 @@ export const state = () => ({
       {
         token: 'line-height-02',
         value: 1.5
+      }
+    ]
+  },
+
+  fontWeight: {
+    config: {
+      name: 'Font Weight'
+    },
+    list: [{
+        token: 'font-weight-01',
+        value: 'normal'
+      },
+      {
+        token: 'font-weight-02',
+        value: 'medium'
+      },
+      {
+        token: 'font-weight-03',
+        value: 'bold'
+      }
+    ]
+  },
+  letterSpacing: {
+    config: {
+      name: 'Letter Spacing'
+    },
+    list: [{
+        token: 'letter-spacing-01',
+        value: -1
+      },
+      {
+        token: 'letter-spacing-02',
+        value: 0
+      },
+      {
+        token: 'letter-spacing-03',
+        value: 1
       }
     ]
   }

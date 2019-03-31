@@ -31,6 +31,11 @@
     color: $black;
     border: 2px solid $white;
 
+    &.btn-outline {
+      background: $black;
+      color: $white;
+      border: 2px solid $white;
+    }
   }
 }
 

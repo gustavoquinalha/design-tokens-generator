@@ -47,23 +47,24 @@
           <div class="content-block-form">
             <div class="form-content" v-for="(x, key, index) in items.list" v-bind:key="index">
               <div class="form-group">
-                <label class="label-control">Font Size token</label>
+                <label class="label-control">{{items.config.name}} token</label>
                 <input type="text" class="form-control" v-model="x.token">
               </div>
 
               <div class="form-group">
-                <label class="label-control">Font Size value</label>
+                <label class="label-control">{{items.config.name}} value</label>
                 <input type="text" class="form-control" v-model="x.value">
               </div>
             </div>
 
             <div class="box-download">
               <button class="btn btn-square-sm">+</button>
-              <span class="text-bold">New Font Size</span>
+              <span class="text-bold">New {{items.config.name}}</span>
             </div>
-          <div class="space"></div>
-          </div>
 
+            <div class="space"></div>
+
+          </div>
         </div>
       </div>
     </div>
