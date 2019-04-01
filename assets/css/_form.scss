@@ -4,7 +4,6 @@
   max-width: 100%;
   width: 100%;
 }
-
 .form-content {
   display: flex;
   flex-wrap: wrap;
@@ -165,4 +164,11 @@
     width: 100%;
     min-width: 100%;
   }
+}
+
+.form-btn {
+  width: 100%;
+  padding: 0 $size3;
+  display: flex;
+  justify-content: flex-end;
 }
