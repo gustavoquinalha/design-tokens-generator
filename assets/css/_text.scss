@@ -22,10 +22,13 @@
 
   &:hover {
     font-weight: bold;
+    color: $black;
+  }
+}
 
-    .btn {
-      background: lighten($grey, 5);
-    }
+@media (max-width: $media-query-small) {
+  .box-subtitle {
+    margin-left: 0;
   }
 }
 

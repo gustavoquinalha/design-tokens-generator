@@ -27,3 +27,10 @@
     box-shadow: none;
   }
 }
+
+@media (max-width: $media-query-small) {
+  .box-content {
+    padding: $size1;
+    box-shadow: none;
+  }
+}

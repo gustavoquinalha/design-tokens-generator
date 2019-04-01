@@ -134,3 +134,35 @@
   transition: .3s;
   font-weight: bold;
 }
+
+@media (max-width: $media-query-medium) {
+
+  .container-checkbox .btn,
+  .container-checkbox>div {
+    flex-grow: 1;
+  }
+
+  .container-checkbox .btn,
+  .container-checkbox .checkbox {
+    width: 100%;
+  }
+}
+
+@media (max-width: $media-query-small) {
+
+  .container-checkbox .btn,
+  .container-checkbox>div {
+    width: 50%;
+    min-width: 50%;
+  }
+
+}
+
+@media (max-width: $media-query-x-small) {
+
+  .container-checkbox .btn,
+  .container-checkbox>div {
+    width: 100%;
+    min-width: 100%;
+  }
+}

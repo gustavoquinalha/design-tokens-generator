@@ -1,4 +1,3 @@
-
 @import "~/assets/css/_variables.scss";
 
 .box-title {
@@ -11,18 +10,7 @@
   overflow: hidden;
 }
 
-// .btn-copy {
-//   position: absolute;
-//   top: $size7;
-//   right: $size2;
-//   font-size: 12px;
-//   padding: 0 16px;
-//   z-index: 900;
-//   transition: 0.3s;
-// }
-
-.btn-copy,
-.btn-export {
+.btn-copy {
   &:after {
     content: "Copied!";
     position: absolute;
@@ -35,7 +23,9 @@
     background: $white;
     padding: $size2;
     border-radius: $radius;
+    z-index: 900;
   }
+
   &.copied {
     &:after {
       opacity: 1;
@@ -53,6 +43,7 @@
   height: calc(100vh - #{$menu-height} - #{$footer-height} - 40px);
   transition: 0.3s;
   overflow: auto;
+
   .copy-block {
     position: relative;
   }
@@ -87,12 +78,14 @@
 
 .box-export {
   position: relative;
+
   .btn {
     position: absolute;
     bottom: $size1;
     right: $size2;
     margin: $size2;
     padding: 0 16px;
+
     &:hover {
       transform: none;
       background: $white;
@@ -100,40 +93,88 @@
       border-color: $white;
     }
   }
+
+  @media (max-width: $media-query-large) {
+    &.control-responsive {
+      display: none;
+    }
+  }
 }
+
 .code {
   display: block;
   margin-bottom: $size4;
 }
 
+.box-export .btn-close {
+  display: none;
+}
+
+.btn-show-result {
+  display: none;
+}
+
 @media (max-width: $media-query-large) {
+
+  .btn-show-result {
+    display: block;
+    position: fixed;
+    bottom: $size2;
+    right: $size2;
+    z-index: 800;
+  }
+
+
+  .box-export .btn-close {
+    display: block;
+  }
+
   .export {
     flex-basis: 100%;
   }
-  .top-sticky,
-  .top-sticky .export-block,
+
   .export-block {
-    height: 50vh;
-    padding: $size3;
+    height: calc(100vh - 60px);
+    padding: $size4;
+    position: fixed;
+    z-index: 800;
+    top: 60px;
+    right: -100%;
+    width: 100%;
+    border-radius: 0;
+    visibility: hidden;
+
+    &.show {
+      visibility: visible;
+      right: 0;
+    }
+  }
+
+  .box-export .btn-copy {
+    position: fixed;
+    top: 80px;
+    right: $size7;
+    z-index: 900;
+    margin: 0;
+  }
+
+  .box-export .btn-close {
+    position: fixed;
+    top: 80px;
+    right: $size3;
+    z-index: 900;
+    margin: 0;
   }
 }
 
 @media (max-width: $media-query-medium) {
-  .vue-sticky-placeholder {
-    height: 0 !important;
-    padding-top: 0 !important;
-  }
-
-  .vue-sticky-el,
-  .top-sticky {
-    position: relative !important;
-    top: initial !important;
-    bottom: initial !important;
-    left: initial !important;
-    right: initial !important;
-  }
-
   .export {
     padding: 0 $size4;
+  }
+}
+
+@media (max-width: $media-query-small) {
+  .btn-show-result .btn {
+    width: 100%;
   }
 }

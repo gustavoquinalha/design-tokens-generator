@@ -3,7 +3,7 @@
     <div class="menu">
       <div class="menu__block size margin container align-items-center justify-content-between">
         <div class="menu__logo">
-          <a href="https://quinalha.me/design-tokens-generator/" target="_blank">
+          <a href="https://quinalha.me/design-tokens-generator/">
             <b>Design Tokens Generator</b>
           </a>
         </div>
@@ -24,6 +24,14 @@
 
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
+
+.btn {
+  &:hover {
+    background: $white;
+    color: $black;
+    border-color: $white;
+  }
+}
 
 a {
   color: $white;

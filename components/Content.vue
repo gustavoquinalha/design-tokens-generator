@@ -7,10 +7,10 @@
         <div class="content-block" v-show="items.config.status">
           <input type="checkbox" class="checkbox-control" :id="'label-' + index">
           <label class="box-subtitle" :for="'label-' + index">
-            <button class="btn btn-square-sm btn-default">
+            <span class="btn btn-square-sm">
               <i class="fas fa-minus"></i>
               <i class="fas fa-plus"></i>
-            </button>
+            </span>
             <span class="subtitle">{{items.config.name}}</span>
           </label>
 
@@ -28,8 +28,10 @@
             </div>
 
             <div class="box-download">
-              <span class="btn-more">+</span>
-              <span class="text-bold">New {{items.config.name}}</span>
+              <button class="btn btn-outline btn-checkbox">
+                <i class="fas fa-plus icon-margin-right"></i>
+                New {{items.config.name}}
+              </button>
             </div>
 
             <div class="space"></div>
