@@ -1,25 +1,29 @@
 <template>
-  <div class="menu__relative">
-    <div class="menu">
-      <div class="menu__block size margin container align-items-center justify-content-between">
-        <div class="menu__logo">
-          <a href="https://quinalha.me/design-tokens-generator/">
-            <b>Design Tokens Generator</b>
-          </a>
-        </div>
-        <div class="menu__links">
-          <a
-            href="https://github.com/gustavoquinalha/design-tokens-generator"
-            target="_blank"
-            class="btn btn-white btn-outline"
-          >
-            <span class="text">Github</span>
-            <i class="fab fa-github"></i>
-          </a>
+  <header>
+    <div class="menu__relative">
+      <div class="menu">
+        <div class="menu__block size margin container align-items-center justify-content-between">
+          <div class="menu__logo">
+            <a href="#" name="Design Tokens Generator">
+              <b>Design Tokens Generator</b>
+            </a>
+          </div>
+          <div class="menu__links">
+            <a
+              name="Github"
+              rel="noopener"
+              href="https://github.com/gustavoquinalha/design-tokens-generator"
+              target="_blank"
+              class="btn btn-white btn-outline"
+            >
+              <span class="text">Github</span>
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </header>
 </template>
 
 <style lang="scss" scoped>

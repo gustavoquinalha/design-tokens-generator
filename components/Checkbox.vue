@@ -1,8 +1,8 @@
 <template>
-  <div class>
+  <nav class>
     <div class>
       <div class="box-title">
-        <span class="title">Design Tokens</span>
+        <h1 class="title">Design Tokens</h1>
         <p class="paragraph">Select your tokens</p>
         <div class="container container-checkbox wrap">
           <div class v-for="(names, index) in $store.state" v-bind:key="index">
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

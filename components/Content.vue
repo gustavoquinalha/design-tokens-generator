@@ -11,19 +11,19 @@
               <i class="fas fa-minus"></i>
               <i class="fas fa-plus"></i>
             </span>
-            <span class="subtitle">{{items.config.name}}</span>
+            <h2 class="subtitle">{{items.config.name}}</h2>
           </label>
 
           <div class="content-block-form">
-            <div class="form-content" v-for="(x, key, index) in items.list" v-bind:key="index">
+            <div class="form-content" v-for="(x, index) in items.list" v-bind:key="index">
               <div class="form-group">
-                <label class="label-control">{{items.config.name}} token</label>
-                <input type="text" class="form-control" v-model="x.token">
+                <label class="label-control" :for="'form-token-' + index">{{items.config.name}} token</label>
+                <input type="text" class="form-control" v-model="x.token" :id="'form-token-' + index">
               </div>
 
               <div class="form-group">
-                <label class="label-control">{{items.config.name}} value</label>
-                <input type="text" class="form-control" v-model="x.value">
+                <label class="label-control" :for="'form-value-' + index">{{items.config.name}} value</label>
+                <input type="text" class="form-control" v-model="x.value" :for="'form-value-' + index">
               </div>
             </div>
 

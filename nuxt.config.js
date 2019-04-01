@@ -2,12 +2,15 @@ import pkg from './package'
 
 export default {
   mode: 'universal',
-
   /*
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en'
+    },
     title: 'Design Tokens Generator',
+    description: 'Design tokens are the minimum elements of the design system',
     meta: [{
         charset: 'utf-8'
       },
@@ -16,8 +19,8 @@ export default {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'Design tokens are the minimum elements of the design system',
-        name: 'Design tokens are the minimum elements of the design system',
+        hid: 'Design Tokens Generator',
+        name: 'Design Tokens Generator',
         content: 'Design Tokens Generator'
       }
     ],
