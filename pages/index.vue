@@ -1,22 +1,24 @@
 <template>
-  <div class="container container-content wrap size margin">
-    <Content/>
-    <Export/>
+  <div class>
+    <div class="container container-content wrap size margin">
+      <Content/>
+      <Export/>
+    </div>
+    <Contributors/>
   </div>
 </template>
 
 <script>
-import {
-  mapState
-}
-from 'vuex'
+import { mapState } from "vuex";
 import Content from "~/components/Content.vue";
 import Export from "~/components/Export.vue";
+import Contributors from "~/components/contributors.vue";
 
 export default {
   components: {
     Content,
-    Export
+    Export,
+    Contributors
   },
   data() {
     return {
