@@ -44,7 +44,6 @@
         </div>
       </div>
     </div>
-
   </nav>
 </template>
 
@@ -53,7 +52,7 @@ export default {
   data() {
     return {
       show: false,
-      token: '',
+      token: ""
     };
   },
   methods: {
@@ -64,15 +63,17 @@ export default {
       this.$store.state.tokens.push({
         status: true,
         name: this.token,
-        list: [{
-          token:  this.tokenName,
-          value:  this.tokenValue
-        }]
-      })
-      this.token = ''
-      this.tokenName = ''
-      this.tokenValue = ''
-      this.toggleModalAddToken()
+        list: [
+          {
+            token: this.tokenName,
+            value: this.tokenValue
+          }
+        ]
+      });
+      this.token = "";
+      this.tokenName = "";
+      this.tokenValue = "";
+      this.toggleModalAddToken();
     }
   }
 };
@@ -146,13 +147,28 @@ export default {
   }
 }
 
+.form-btn {
+  width: 100%;
+  padding: 0 $size3;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .form-group .btn {
   flex-basis: 200px;
 }
 
 @media (max-width: $media-query-medium) {
-  .modal {
+  .form-btn {
+    margin: 0;
+    padding: 0;
+  }
+  .modal-relative {
     padding: $size4;
+  }
+
+  .modal .box-title .title {
+    font-size: 18px;
   }
 }
 </style>

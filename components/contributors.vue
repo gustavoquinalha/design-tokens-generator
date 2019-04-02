@@ -1,7 +1,7 @@
 <template>
-  <div class="size margin contributors">
-    <h3>Contributors</h3>
-    <div class="container container-contributors wrap">
+  <div class="contributors">
+    <h3>By Contributors</h3>
+    <div class="container align-center container-contributors wrap">
       <div class="box-contributor">
         <a
           href="https://github.com/gustavoquinalha"
@@ -53,17 +53,23 @@ export default {
 $size: 36px;
 
 .contributors {
-  padding: $size7 0;
+  margin-top: $size2;
+  text-align: center;
   h3 {
-    margin-bottom: 8px;
+    margin-bottom: $size2;
+    font-size: $size3;
+    // color: darken($grey, 30);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 900;
   }
 }
 .container-contributors {
-  margin: -8px;
+  margin: -4px;
 }
 
 .box-contributor {
-  margin: 8px;
+  margin: 4px;
   .img {
     overflow: hidden;
     width: $size;
@@ -73,7 +79,7 @@ $size: 36px;
     transition: 0.3s;
 
     &:hover {
-      box-shadow: 2px 0 8px 0 rgba(0, 0, 0, 0.16);
+      box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.16);
       transform: scale(1.1, 1.1)
     }
 

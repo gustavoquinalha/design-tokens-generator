@@ -4,6 +4,7 @@
   max-width: 100%;
   width: 100%;
 }
+
 .form-content {
   display: flex;
   flex-wrap: wrap;
@@ -155,6 +156,11 @@
     min-width: 50%;
   }
 
+  .container-checkbox .btn,
+  .container-checkbox .checkbox {
+    margin: 0;
+  }
+
 }
 
 @media (max-width: $media-query-x-small) {
@@ -164,13 +170,8 @@
     width: 100%;
     min-width: 100%;
   }
-}
 
-.form-btn {
-  width: 100%;
-  padding: 0 $size3;
-  display: flex;
-  justify-content: flex-end;
+
 }
 
 .form-group.full-width {
