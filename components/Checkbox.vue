@@ -5,12 +5,12 @@
         <h1 class="title">Design Tokens</h1>
         <p class="paragraph">Select your tokens</p>
         <div class="container container-checkbox wrap">
-          <div class v-for="(names, index) in $store.state" v-bind:key="index">
+          <div class v-for="(token, index) in $store.state.tokens" v-bind:key="index">
             <div
-              @click="names.config.status = !names.config.status"
+              @click="token.status = !token.status"
               class="checkbox"
-              :class="{active : names.config.status}"
-            >{{names.config.name}}</div>
+              :class="{active : token.status}"
+            >{{token.name}}</div>
           </div>
           <button class="btn btn-outline btn-checkbox" @click="toggleModalAddToken">
             <i class="fas fa-plus icon-margin-right"></i> New Token
@@ -34,16 +34,21 @@
           <div class="form-content">
             <div class="form-group">
               <label class="label-control">X token</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" v-model="tokenName">
             </div>
 
             <div class="form-group">
               <label class="label-control">X value</label>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" v-model="tokenValue">
+            </div>
+
+            <div class="form-group">
+              <label class="label-control">Nome</label>
+              <input type="text" class="form-control" v-model="token">
             </div>
 
             <div class="form-btn">
-              <button class="btn">ADD</button>
+              <button class="btn" @click="addToken">ADD</button>
             </div>
           </div>
         </div>
@@ -56,12 +61,29 @@
 export default {
   data() {
     return {
-      show: false
+      show: false,
+      token: '',
+      tokenName: '',
+      tokenValue: ''
     };
   },
   methods: {
     toggleModalAddToken() {
       this.show = !this.show;
+    },
+    addToken() {
+      this.$store.state.tokens.push({
+        status: true,
+        name: this.token,
+        list: [{
+          token:  this.tokenName,
+          value:  this.tokenValue
+        }]
+      })
+      this.token = ''
+      this.tokenName = ''
+      this.tokenValue = ''
+      this.toggleModalAddToken()
     }
   }
 };
