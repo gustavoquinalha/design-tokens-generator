@@ -32,18 +32,8 @@
 
         <div class="content-block-form">
           <div class="form-content">
-            <div class="form-group">
-              <label class="label-control">X token</label>
-              <input type="text" class="form-control" v-model="tokenName">
-            </div>
-
-            <div class="form-group">
-              <label class="label-control">X value</label>
-              <input type="text" class="form-control" v-model="tokenValue">
-            </div>
-
-            <div class="form-group">
-              <label class="label-control">Nome</label>
+            <div class="form-group full-width">
+              <label class="label-control">Name</label>
               <input type="text" class="form-control" v-model="token">
             </div>
 
@@ -54,6 +44,7 @@
         </div>
       </div>
     </div>
+
   </nav>
 </template>
 
@@ -63,8 +54,6 @@ export default {
     return {
       show: false,
       token: '',
-      tokenName: '',
-      tokenValue: ''
     };
   },
   methods: {

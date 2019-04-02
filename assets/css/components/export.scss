@@ -116,6 +116,10 @@
 
 @media (max-width: $media-query-large) {
 
+  .box-title {
+    display: none;
+  }
+
   .btn-show-result {
     display: block;
     position: fixed;
