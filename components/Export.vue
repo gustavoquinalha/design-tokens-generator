@@ -13,12 +13,12 @@
         <div id="divContent">
           <code
             class="code"
-            v-for="(items, index) in $store.state"
+            v-for="(token, index) in $store.state.tokens"
             v-bind:key="index"
-            v-show="items.config.status"
+            v-show="token.status"
           >
-            <span class="paragraph">{{'//' + items.config.name}}</span>
-            <div v-for="(x, index) in items.list" v-bind:key="index">
+            <span class="paragraph">{{'//' + token.name}}</span>
+            <div v-for="(x, index) in token.list" v-bind:key="index">
               ${{x.token}}: {{x.value}};
               <br>
             </div>
