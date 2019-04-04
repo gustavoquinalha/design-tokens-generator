@@ -1,7 +1,7 @@
 <template>
-  <div class="container container-content wrap size margin">
+  <div class="size margin">
     <Content/>
-    <Export/>
+    <!-- <Export/> -->
   </div>
 </template>
 
@@ -25,8 +25,4 @@ export default {
 
 <style lang="scss">
 @import "~/assets/css/_variables.scss";
-.container-content {
-  min-height: calc(100vh - #{$menu-height} - #{$footer-height});
-  padding: 40px 0;
-}
 </style>

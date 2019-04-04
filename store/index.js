@@ -8,7 +8,7 @@ export const state = () => ({
         value: 'Roboto, sans-serif'
       }]
     },
-  
+
     {
       status: true,
       name: 'Font Size',
@@ -43,7 +43,7 @@ export const state = () => ({
         }
       ]
     },
-  
+
     {
       status: true,
       name: 'Line Height',
@@ -57,7 +57,7 @@ export const state = () => ({
         }
       ]
     },
-  
+
     {
       status: true,
       name: 'Font Weight',
@@ -75,7 +75,7 @@ export const state = () => ({
         }
       ]
     },
-  
+
     {
       status: true,
       name: 'Letter Spacing',
@@ -93,7 +93,7 @@ export const state = () => ({
         }
       ]
     },
-  
+
     {
       status: true,
       name: 'Brand Colors',
@@ -107,7 +107,7 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
       status: true,
       name: 'Media Query',
@@ -129,7 +129,7 @@ export const state = () => ({
         }
       ]
     },
-  
+
     {
       status: true,
       name: 'Sizes',
@@ -159,7 +159,7 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
       status: true,
       name: 'Box Shadow',
@@ -177,7 +177,7 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
       status: true,
       name: 'Border Width',
@@ -195,7 +195,7 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
       status: true,
       name: 'Border Radius',
@@ -213,9 +213,9 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
-      status: false,
+      status: true,
       name: 'Icon Size',
       list: [{
           token: 'icon-size-01',
@@ -231,9 +231,9 @@ export const state = () => ({
         },
       ]
     },
-  
+
     {
-      status: false,
+      status: true,
       name: 'Opacity',
       list: [{
           token: 'opacity-01',
