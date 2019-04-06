@@ -26,47 +26,63 @@ export default {
       },
       // Open Graph
       {
+        hid: 'og:title',
         name: 'og:title',
         content: 'Design Tokens Generator'
       },
       {
+        hid: 'og:description',
         name: 'og:description',
         content: 'Design tokens are the minimum elements of the design system'
       },
       {
+        hid: 'og:type',
         name: 'og:type',
         content: 'website'
       },
       {
+        hid: 'og:url',
         name: 'og:url',
         content: 'https://quinalha.me/design-tokens-generator'
       },
       {
+        hid: 'og:image',
         name: 'og:image',
         content: 'intro.png'
       },
+      {
+        hid: 'og:image:alt',
+        name: 'og:image:alt',
+        content: 'Design Tokens Generator image'
+      },
       // Twitter Card
       {
+        hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary'
       },
       {
+        hid: 'twitter:site',
         name: 'twitter:site',
         content: '@gustavoquinalha'
       },
       {
+        hid: 'twitter:title',
         name: 'twitter:title',
         content: 'Design Tokens Generator'
       },
       {
+        hid: 'twitter:description',
         name: 'twitter:description',
         content: 'Design tokens are the minimum elements of the design system'
       },
       {
+        hid: 'twitter:image',
         name: 'twitter:image',
         content: 'intro.png'
       },
       {
+        hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: 'Design Tokens Generator image'
       }
