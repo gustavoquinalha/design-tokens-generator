@@ -2,35 +2,18 @@
   <div class="contributors">
     <h3>By Contributors</h3>
     <div class="container align-center container-contributors wrap">
-      <div class="box-contributor">
+      <div class="box-contributor" v-for="(contributor, index) in contributors" v-bind:key="index">
         <a
-          href="https://github.com/gustavoquinalha"
+          :href="'https://github.com/'+contributor.github"
           target="_blank"
-          name="@gustavoquinalha"
-          title="@gustavoquinalha"
+          :name="'@'+contributor.github"
+          :title="'@'+contributor.github"
         >
           <div class="img">
             <img
-              src="https://avatars1.githubusercontent.com/u/13446801?s=460&v=4"
-              alt="@gustavoquinalha"
-              name="@gustavoquinalha"
-            >
-          </div>
-        </a>
-      </div>
-
-      <div class="box-contributor">
-        <a
-          href="https://github.com/lucasfontesgaspareto"
-          target="_blank"
-          name="@lucasfontesgaspareto"
-          title="@lucasfontesgaspareto"
-        >
-          <div class="img">
-            <img
-              src="https://avatars3.githubusercontent.com/u/8084651?s=460&v=4"
-              alt="@lucasfontesgaspareto"
-              name="@lucasfontesgaspareto"
+              :src="contributor.image"
+              :name="'@'+contributor.github"
+              :alt="'@'+contributor.github"
             >
           </div>
         </a>
@@ -42,7 +25,22 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      contributors: [
+        {
+          github: "gustavoquinalha",
+          image: "https://avatars1.githubusercontent.com/u/13446801?s=460&v=4"
+        },
+        {
+          github: "lucasfontesgaspareto",
+          image: "https://avatars3.githubusercontent.com/u/8084651?s=460&v=4"
+        },
+        {
+          github: "usuarioJapa",
+          image: "https://avatars1.githubusercontent.com/u/20959993?s=460&v=4"
+        }
+      ]
+    };
   },
   methods: {}
 };
@@ -80,7 +78,7 @@ $size: 36px;
 
     &:hover {
       box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.16);
-      transform: scale(1.1, 1.1)
+      transform: scale(1.1, 1.1);
     }
 
     img {
@@ -91,3 +89,4 @@ $size: 36px;
   }
 }
 </style>
+

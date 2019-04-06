@@ -1,4 +1,5 @@
 import pkg from './package'
+// import ogImage from '~/assets/image/intro.png';
 
 export default {
   mode: 'universal',
@@ -19,9 +20,71 @@ export default {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'Design Tokens Generator',
-        name: 'Design Tokens Generator',
+        hid: 'description',
+        name: 'description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      // Open Graph
+      {
+        hid: 'og:title',
+        property: 'og:title',
         content: 'Design Tokens Generator'
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://quinalha.me/design-tokens-generator'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '	https://quinalha.me/design-tokens-generator/intro.png'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'Design Tokens Generator image'
+      },
+      // Twitter Card
+      {
+        hid: 'twitter:card',
+        property: 'twitter:card',
+        content: 'summary'
+      },
+      {
+        hid: 'twitter:site',
+        property: 'twitter:site',
+        content: '@gustavoquinalha'
+      },
+      {
+        hid: 'twitter:title',
+        property: 'twitter:title',
+        content: 'Design Tokens Generator'
+      },
+      {
+        hid: 'twitter:description',
+        property: 'twitter:description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      {
+        hid: 'twitter:image',
+        property: 'twitter:image',
+        content: 'https://quinalha.me/design-tokens-generator/intro.png'
+      },
+      {
+        hid: 'twitter:image:alt',
+        property: 'twitter:image:alt',
+        content: 'Design Tokens Generator image'
       }
     ],
     link: [{
@@ -37,11 +100,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Nunito:400,700,900'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://cdn.jsdelivr.net/npm/the-grid-flexbox@2.0.1/css/the-grid.min.css'
+        href: 'https://fonts.googleapis.com/css?family=Nunito:700,900'
       },
       {
         rel: 'stylesheet',

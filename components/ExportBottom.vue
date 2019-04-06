@@ -1,5 +1,6 @@
 <template>
   <div>
+    <a ref="download" target="_blank" href download="tokens.scss"></a>
     <div class="blackdrop" :class="{show : result}" @click="result = !result"></div>
     <div class="modal modal-lg" :class="{show : result}">
       <div class="modal-relative">
@@ -26,8 +27,19 @@
         </div>
 
         <div class="box-export container align-center">
-          <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
-            <i class="fas fa-copy"></i>
+          <button
+            class="btn btn-white btn-save"
+            :class="{saved: saved}"
+            @click="save()"
+            :disabled="saving"
+          >
+            <i class="fas fa-save icon-margin-right"></i>
+            <span>Save</span>
+          </button>
+
+          <button class="btn btn-white btn-copy" :class="{copied: copied}" @click="copy()">
+            <i class="fas fa-copy icon-margin-right"></i>
+            <span>Copy</span>
           </button>
         </div>
 
@@ -46,6 +58,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import Footer from "~/components/Footer.vue";
 export default {
   components: {
@@ -54,7 +67,9 @@ export default {
   data() {
     return {
       copied: false,
-      result: true
+      result: false,
+      saving: false,
+      saved: false
     };
   },
   computed: {
@@ -73,21 +88,22 @@ export default {
       var elm = document.getElementById("divContent");
       var ts = this;
       // for Internet Explorer
-
       function setTrue() {
-        ts.copied = true;
-        setTimeout(function() {
-          ts.copied = false;
-          console.log("te");
-        }, 3000);
+        if (!ts.saving) {
+          ts.copied = true;
+          setTimeout(function() {
+            ts.copied = false;
+            console.log("te");
+          }, 3000);
+        }
       }
-
       if (document.body.createTextRange) {
         var range = document.body.createTextRange();
         range.moveToElementText(elm);
         range.select();
         document.execCommand("Copy");
         setTrue();
+        return range.toString();
       } else if (window.getSelection) {
         // other browsers
         var selection = window.getSelection();
@@ -97,6 +113,28 @@ export default {
         selection.addRange(range);
         document.execCommand("Copy");
         setTrue();
+        return selection.toString();
+      }
+    },
+    async save() {
+      try {
+        this.saving = true;
+        const text = this.copy();
+        const setTrue = () => {
+          this.saved = true;
+          setTimeout(() => {
+            this.saved = false;
+          }, 3000);
+        };
+        const file = new Blob([text], { type: "text/plain" }),
+          link = URL.createObjectURL(file);
+        this.$refs["download"].href = link;
+        this.$refs["download"].click();
+        setTrue();
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.saving = false;
       }
     }
   }

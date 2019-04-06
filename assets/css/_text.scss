@@ -5,6 +5,10 @@
   align-items: baseline;
   flex-direction: column;
   color: $black;
+
+  .title {
+    font-weight: 900;
+  }
 }
 
 .box-subtitle {
@@ -14,6 +18,10 @@
   display: flex;
   align-items: baseline;
   color: $black;
+
+  .subtitle {
+    font-weight: 900;
+  }
 
   span {
     cursor: pointer;
@@ -54,9 +62,6 @@
     align-items: center;
     margin-right: $size2;
     font-weight: bold;
-  }
-
-  &:hover {
   }
 }
 

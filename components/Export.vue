@@ -26,7 +26,10 @@
         </div>
       </div>
 
-      <div class="box-export container justify-content-end" :class="{'control-responsive': !result}">
+      <div
+        class="box-export container justify-content-end"
+        :class="{'control-responsive': !result}"
+      >
         <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
           <i class="fas fa-copy"></i>
         </button>

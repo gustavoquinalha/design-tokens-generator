@@ -5,12 +5,12 @@
 }
 
 .box-export {
-  margin-top: $size4;
   position: relative;
+  margin: -$size1;
+  margin-top: $size4;
 
   .btn {
-    width: $size6;
-    height: $size6;
+    margin: $size1;
   }
 }
 
@@ -27,26 +27,51 @@
   z-index: 1000;
 }
 
+.btn-save,
 .btn-copy {
+  position: relative;
+  padding: 0 $size3;
+  border-color: $black;
+
   &:after {
     content: "Copied!";
     position: absolute;
-    top: 100%;
-    margin-top: $size1;
-    right: 50%;
-    transform: translateX(50%);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: $size3;
     transition: 0.3s;
-    color: $white;
-    background: $black;
+    opacity: 0;
+    color: $black;
+    background: $white;
     padding: $size2;
     border-radius: $radius;
-    visibility: hidden;
   }
+}
 
+.btn-save {
+  &.saved {
+    &:after {
+      opacity: 1;
+      bottom: 100%;
+    }
+  }
+}
+
+.btn-copy {
   &.copied {
     &:after {
-      visibility: visible;
+      opacity: 1;
+      bottom: 100%;
     }
+  }
+}
+
+.btn-save {
+  margin-right: $size1;
+
+  &:after {
+    content: "Saved!";
   }
 }
 
