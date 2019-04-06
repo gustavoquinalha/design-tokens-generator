@@ -34,6 +34,30 @@
   }
 }
 
+.btn-save {
+  &:after {
+    content: "Saved!";
+    position: absolute;
+    right: 0;
+    top: 2px;
+    margin-right: $size2;
+    transition: 0.3s;
+    opacity: 0;
+    color: $black;
+    background: $white;
+    padding: $size2;
+    border-radius: $radius;
+    z-index: 900;
+  }
+
+  &.saved {
+    &:after {
+      opacity: 1;
+      right: 100%;
+    }
+  }
+}
+
 .export-block {
   position: relative;
   border-radius: $radius;
@@ -154,7 +178,7 @@
     }
   }
 
-  .box-export .btn-copy {
+  .box-export .btn-copy, .box-export .btn-save {
     position: fixed;
     top: 80px;
     right: $size7;
