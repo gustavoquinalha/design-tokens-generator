@@ -1,4 +1,5 @@
 import pkg from './package'
+// import ogImage from '~/assets/image/intro.png';
 
 export default {
   mode: 'universal',
@@ -19,9 +20,55 @@ export default {
         content: 'width=device-width, initial-scale=1'
       },
       {
-        hid: 'Design Tokens Generator',
-        name: 'Design Tokens Generator',
+        hid: 'description',
+        name: 'description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      // Open Graph
+      {
+        name: 'og:title',
         content: 'Design Tokens Generator'
+      },
+      {
+        name: 'og:description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      {
+        name: 'og:type',
+        content: 'website'
+      },
+      {
+        name: 'og:url',
+        content: 'https://quinalha.me/design-tokens-generator'
+      },
+      {
+        name: 'og:image',
+        content: 'intro.png'
+      },
+      // Twitter Card
+      {
+        name: 'twitter:card',
+        content: 'summary'
+      },
+      {
+        name: 'twitter:site',
+        content: '@gustavoquinalha'
+      },
+      {
+        name: 'twitter:title',
+        content: 'Design Tokens Generator'
+      },
+      {
+        name: 'twitter:description',
+        content: 'Design tokens are the minimum elements of the design system'
+      },
+      {
+        name: 'twitter:image',
+        content: 'intro.png'
+      },
+      {
+        name: 'twitter:image:alt',
+        content: 'Design Tokens Generator image'
       }
     ],
     link: [{
