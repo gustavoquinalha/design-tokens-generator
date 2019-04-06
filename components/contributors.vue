@@ -8,6 +8,7 @@
           target="_blank"
           :name="'@'+contributor.github"
           :title="'@'+contributor.github"
+          rel="noreferrer"
         >
           <div class="img">
             <img

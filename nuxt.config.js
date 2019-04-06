@@ -104,8 +104,14 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://use.fontawesome.com/releases/v5.8.1/css/all.css',
-        integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',
+        href: 'https://use.fontawesome.com/releases/v5.8.1/css/solid.css',
+        integrity: 'sha384-QokYePQSOwpBDuhlHOsX0ymF6R/vLk/UQVz3WHa6wygxI5oGTmDTv8wahFOSspdm',
+        crossorigin: 'anonymous'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://use.fontawesome.com/releases/v5.8.1/css/fontawesome.css',
+        integrity: 'sha384-vd1e11sR28tEK9YANUtpIOdjGW14pS87bUBuOIoBILVWLFnS+MCX9T6MMf0VdPGq',
         crossorigin: 'anonymous'
       }
     ]
