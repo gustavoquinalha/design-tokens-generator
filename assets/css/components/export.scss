@@ -17,7 +17,7 @@
   padding: $size6;
   background: $black;
   color: $white;
-  height: calc(100vh - #{$menu-height} - 130px - 40px);
+  height: calc(100vh - #{$menu-height} - 90px - 40px);
   transition: 0.3s;
   overflow-y: auto;
 
@@ -50,17 +50,22 @@
 
 .top-sticky {
   .export-block {
-    height: calc(100vh - #{$menu-height} - 130px + 40px);
+    height: calc(100vh - #{$menu-height} - 90px + 40px);
   }
 }
 
 .box-export {
-  position: relative;
+  position: absolute;
+  bottom: $size2;
+  right: $size3;
   margin-top: $size2;
+  transition: .3s;
 
   .btn-save,
   .btn-copy {
     position: relative;
+    padding: 0 $size3;
+    border-color: $black;
 
     &:after {
       content: "Copied!";
@@ -87,7 +92,7 @@
   }
 
   .btn-save {
-    margin-right: $size2;
+    margin-right: $size1;
 
     &:after {
       content: "Saved!";
@@ -131,6 +136,12 @@
     }
   }
 }
+
+// .top-sticky {
+//   .box-export {
+//     top: 0;
+//   }
+// }
 
 .code {
   display: block;

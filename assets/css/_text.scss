@@ -81,11 +81,15 @@
 
 .paragraph {
   font-size: 14px;
-  opacity: .5;
   line-height: 2;
+  color: $grey-dark
 }
 
 .space {
   padding: $size7 0;
   width: 100%;
+}
+
+.box-content .form-group-block:last-child .space {
+  display: none;
 }

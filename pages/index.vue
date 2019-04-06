@@ -1,5 +1,5 @@
 <template>
-  <div class="container container-content wrap size margin">
+  <div class="container container-content wrap size margin relative">
     <Content/>
     <Export/>
   </div>

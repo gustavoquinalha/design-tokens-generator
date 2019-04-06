@@ -9,7 +9,7 @@
       <span class="title">Result</span>
     </div>
 
-    <div v-sticky sticky-offset="offset">
+    <div v-sticky sticky-offset="offset" class="relative">
       <div class="export-block" :class="{show: result}">
         <div id="divContent">
           <code
@@ -25,25 +25,32 @@
             </div>
           </code>
         </div>
+        <div
+          v-show="!$store.state.tokens.find(token => token.status)"
+          class="alert"
+        >You must select a token to generate your tokens.</div>
       </div>
 
-      <div
-        class="box-export container justify-content-end"
-        :class="{'control-responsive': !result}"
-      >
-        <button class="btn btn-save" :class="{saved: saved}" @click="save()" :disabled="saving">
-          <i class="fas fa-save icon-margin-right"></i>
-          <span>SAVE</span>
-        </button>
+      <div class="relative">
+        <div
+          class="box-export container justify-content-end"
+          :class="{'control-responsive': !result}"
+          v-show="$store.state.tokens.find(token => token.status)"
+        >
+          <button class="btn btn-white  btn-save" :class="{saved: saved}" @click="save()" :disabled="saving">
+            <i class="fas fa-save icon-margin-right"></i>
+            <span>Save</span>
+          </button>
 
-        <button class="btn btn-copy" :class="{copied: copied}" @click="copy()">
-          <i class="fas fa-copy icon-margin-right"></i>
-          <span>COPY</span>
-        </button>
+          <button class="btn btn-white  btn-copy" :class="{copied: copied}" @click="copy()">
+            <i class="fas fa-copy icon-margin-right"></i>
+            <span>Copy</span>
+          </button>
 
-        <button class="btn btn-close" @click="toogleResult()">
-          <i class="fas fa-times"></i>
-        </button>
+          <button class="btn btn-close" @click="toogleResult()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
