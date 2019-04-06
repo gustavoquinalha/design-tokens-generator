@@ -2,6 +2,7 @@
   <div class="container container-content wrap">
     <div class="sidebar">
       <ul class="list-style-none sidebar-list">
+        <li class="title">Tokens</li>
         <li
           class="sidebar-item"
           v-for="(token, index) in $store.state.tokens"
@@ -52,6 +53,18 @@
               </div>
 
               <div class="space"></div>
+              <div class="box-subtitle">
+                <span class="subtitle">SASS</span>
+              </div>
+              <div class="code">
+                <code class v-bind:key="index" v-show="token.status">
+                  <span class="paragraph">{{'//' + token.name}}</span>
+                  <div v-for="(x, index) in token.list" v-bind:key="index">
+                    ${{x.token}}: {{x.value}};
+                    <br>
+                  </div>
+                </code>
+              </div>
             </div>
           </div>
         </div>

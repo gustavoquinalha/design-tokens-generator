@@ -4,34 +4,81 @@
   margin-bottom: 24px;
 }
 
+.box-export {
+  margin-top: $size4;
+  position: relative;
+
+  .btn {
+    width: $size6;
+    height: $size6;
+  }
+}
+
 .export {
-  flex-basis: 100%;
   position: fixed;
   bottom: $size2;
   right: $size2;
   overflow: hidden;
+  width: 100%;
+  margin: -$size2;
+  height: $footer-height;
+  display: flex;
+  padding-top: $size3;
+  z-index: 1000;
 }
 
 .btn-copy {
   &:after {
     content: "Copied!";
     position: absolute;
-    right: 0;
-    top: 2px;
-    margin-right: $size2;
+    top: 100%;
+    margin-top: $size1;
+    right: 50%;
+    transform: translateX(50%);
     transition: 0.3s;
-    opacity: 0;
-    color: $black;
-    background: $white;
+    color: $white;
+    background: $black;
     padding: $size2;
     border-radius: $radius;
-    z-index: 900;
+    visibility: hidden;
   }
 
   &.copied {
     &:after {
-      opacity: 1;
-      right: 100%;
+      visibility: visible;
+    }
+  }
+}
+
+.export-block {
+  position: fixed;
+  top: 100%;
+  right: 0;
+  background: lighten($black, 10);
+  color: $white;
+  padding: $size7 $size3;
+  width: 100%;
+  height: calc(100vh - #{$menu-height});
+  overflow: auto;
+  z-index: 1100;
+  transition: .3s;
+  visibility: hidden;
+
+  &.show {
+    top: $menu-height;
+    visibility: visible;
+  }
+}
+
+@media (max-width: $media-query-large) {
+  .export {
+    background: $black;
+    align-items: center;
+    padding-top: 0;
+    height: $menu-height;
+
+    .btn {
+      border-color: $white;
     }
   }
 }

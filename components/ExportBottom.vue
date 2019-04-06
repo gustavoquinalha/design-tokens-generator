@@ -1,14 +1,18 @@
 <template>
-  <div class="export" >
-    <div class="btn-show-result">
-      <button class="btn" @click="toogleResult()">Export SASS</button>
-    </div>
+  <div>
+    <div class="blackdrop" :class="{show : result}" @click="result = !result"></div>
+    <div class="modal modal-lg" :class="{show : result}">
+      <div class="modal-relative">
+        <button class="btn btn-close" @click="result = !result">
+          <i class="fas fa-times"></i>
+        </button>
 
-    <div v-show="result">
-      <div class="export-block" :class="{show: result}">
-        <div id="divContent">
+        <div class="box-subtitle margin-bottom-24">
+          <span class="subtitle text-align-center">Export SASS</span>
+        </div>
+
+        <div class="modal-content relative code" id="divContent">
           <code
-            class="code"
             v-for="(token, index) in $store.state.tokens"
             v-bind:key="index"
             v-show="token.status"
@@ -20,27 +24,37 @@
             </div>
           </code>
         </div>
+
+        <div class="box-export container align-center">
+          <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
+            <i class="fas fa-copy"></i>
+          </button>
+        </div>
+
+        <Footer/>
       </div>
+    </div>
 
-      <div class="box-export container justify-content-end" :class="{'control-responsive': !result}">
-        <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
-          <i class="fas fa-copy"></i>
-        </button>
-
-        <button class="btn btn-close" @click="toogleResult()">
-          <i class="fas fa-times"></i>
-        </button>
+    <div class="export">
+      <div class="size margin container justify-content-end">
+        <div class="btn-show-result">
+          <button class="btn" @click="toogleResult()">Export SASS</button>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Footer from "~/components/Footer.vue";
 export default {
+  components: {
+    Footer
+  },
   data() {
     return {
       copied: false,
-      result: false
+      result: true
     };
   },
   computed: {

@@ -28,8 +28,7 @@ export default {
 @import "~/assets/css/_variables.scss";
 
 .footer {
-  background: $white;
   color: $black;
-  height: $footer-height;
+  padding-top: $size3;
 }
 </style>

@@ -21,10 +21,60 @@ body {
 }
 
 .size {
-  width: 1366px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 95%;
 }
 
 .margin {
   margin: 0 auto;
+}
+
+*::-webkit-scrollbar {
+  width: .8rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: $grey;
+  border-radius: 10px;
+  border: 2px solid $white;
+  transition: .3s;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: darken($grey, 10);
+}
+
+.relative {
+  position: relative;
+}
+
+.code {
+  position: relative;
+  border-radius: $radius;
+  padding: $size6;
+  background: $black;
+  color: $white;
+  transition: 0.3s;
+  width: 100%;
+
+  &::-webkit-scrollbar {
+    width: .8rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: lighten($black, 30);
+    border-radius: 10px;
+    border: 2px solid $black;
+    transition: .3s;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: lighten($black, 40);
+  }
+}
+
+@media (max-width: $media-query-medium) {
+  .code {
+    padding: $size3;
+  }
 }
