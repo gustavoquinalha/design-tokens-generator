@@ -7,56 +7,9 @@
 .export {
   flex-basis: 30%;
   position: relative;
-  overflow: hidden;
 }
 
-.btn-copy {
-  &:after {
-    content: "Copied!";
-    position: absolute;
-    right: 0;
-    top: 2px;
-    margin-right: $size2;
-    transition: 0.3s;
-    opacity: 0;
-    color: $black;
-    background: $white;
-    padding: $size2;
-    border-radius: $radius;
-    z-index: 900;
-  }
 
-  &.copied {
-    &:after {
-      opacity: 1;
-      right: 100%;
-    }
-  }
-}
-
-.btn-save {
-  &:after {
-    content: "Saved!";
-    position: absolute;
-    right: 0;
-    top: 2px;
-    margin-right: $size2;
-    transition: 0.3s;
-    opacity: 0;
-    color: $black;
-    background: $white;
-    padding: $size2;
-    border-radius: $radius;
-    z-index: 900;
-  }
-
-  &.saved {
-    &:after {
-      opacity: 1;
-      right: 100%;
-    }
-  }
-}
 
 .export-block {
   position: relative;
@@ -64,9 +17,9 @@
   padding: $size6;
   background: $black;
   color: $white;
-  height: calc(100vh - #{$menu-height} - #{$footer-height} - 40px);
+  height: calc(100vh - #{$menu-height} - 130px - 40px);
   transition: 0.3s;
-  overflow: auto;
+  overflow-y: auto;
 
   .copy-block {
     position: relative;
@@ -81,44 +34,98 @@
   }
 
   &::-webkit-scrollbar-track {
-    background: lighten($black, 40);
+    background: lighten($black, 20);
   }
 
   &::-webkit-scrollbar-thumb {
-    background: lighten($black, 20);
+    background: lighten($black, 30);
     transition: 0.3s;
+    border-radius: 50px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: lighten($black, 30);
+    background: lighten($black, 40);
   }
 }
 
 .top-sticky {
   .export-block {
-    height: calc(100vh - #{$menu-height} - #{$footer-height} + 40px);
+    height: calc(100vh - #{$menu-height} - 130px + 40px);
   }
 }
 
 .box-export {
   position: relative;
+  margin-top: $size2;
 
-  .btn {
-    position: absolute;
-    bottom: $size1;
-    right: $size2;
-    margin: $size2;
-    padding: 0 16px;
+  .btn-save,
+  .btn-copy {
+    position: relative;
 
-    &:hover {
-      transform: none;
-      background: $white;
+    &:after {
+      content: "Copied!";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: $size3;
+      transition: 0.3s;
+      opacity: 0;
       color: $black;
-      border-color: $white;
+      background: $white;
+      padding: $size2;
+      border-radius: $radius;
+    }
+
+    &.saved,
+    &.copied {
+      &:after {
+        opacity: 1;
+        bottom: 100%;
+      }
+    }
+  }
+
+  .btn-save {
+    margin-right: $size2;
+
+    &:after {
+      content: "Saved!";
     }
   }
 
   @media (max-width: $media-query-large) {
+    position: fixed;
+    bottom: $size3;
+    right: $size3;
+    z-index: 900;
+
+    .btn {
+      border-color: $white;
+      width: $size6;
+      height: $size6;
+      padding: 0;
+
+      span {
+        display: none;
+      }
+
+      .icon-margin-right {
+        margin-right: 0;
+      }
+
+      &.btn-close {
+        background: $black;
+        border-color: $black;
+        color: $white;
+
+        &:hover {
+          background: $white;
+          color: $black;
+        }
+      }
+    }
+
     &.control-responsive {
       display: none;
     }
@@ -178,13 +185,22 @@
     }
   }
 
-  .box-export .btn-copy, .box-export .btn-save {
-    position: fixed;
-    top: 80px;
-    right: $size7;
-    z-index: 900;
-    margin: 0;
-  }
+  // .box-export .btn-copy,
+  // .box-export .btn-save {
+  //   position: fixed;
+  //   top: 80px;
+  //   right: $size7;
+  //   z-index: 900;
+  //   margin: 0;
+  // }
+
+  // .box-export .btn-save {
+  //   right: 114px;
+  // }
+
+  // .box-export .btn-save {
+  //   right: 114px;
+  // }
 
   .box-export .btn-close {
     position: fixed;

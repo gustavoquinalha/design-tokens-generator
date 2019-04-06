@@ -1,6 +1,6 @@
 <template>
   <div class="export" sticky-container>
-    <a ref="download" target="_blank" href="" download="tokens.scss"></a>
+    <a ref="download" target="_blank" href download="tokens.scss"></a>
     <div class="btn-show-result">
       <button class="btn" @click="toogleResult()">Export SASS</button>
     </div>
@@ -27,13 +27,18 @@
         </div>
       </div>
 
-      <div class="box-export container justify-content-end" :class="{'control-responsive': !result}">
-        <button class="btn btn-copy" @click="copy()" :class="{copied: copied}">
-          <i class="fas fa-copy"></i>
+      <div
+        class="box-export container justify-content-end"
+        :class="{'control-responsive': !result}"
+      >
+        <button class="btn btn-save" :class="{saved: saved}" @click="save()" :disabled="saving">
+          <i class="fas fa-save icon-margin-right"></i>
+          <span>SAVE</span>
         </button>
 
-        <button class="btn btn-save" style="right: 200px;" :class="{saved: saved}" @click="save()" :disabled="saving">
-          <i class="fas fa-copy"></i>
+        <button class="btn btn-copy" :class="{copied: copied}" @click="copy()">
+          <i class="fas fa-copy icon-margin-right"></i>
+          <span>COPY</span>
         </button>
 
         <button class="btn btn-close" @click="toogleResult()">
@@ -45,7 +50,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
@@ -102,29 +107,29 @@ export default {
         return selection.toString();
       }
     },
-    async save () {
+    async save() {
       try {
-        this.saving = true
-        const text = this.copy()
+        this.saving = true;
+        const text = this.copy();
 
         const setTrue = () => {
           this.saved = true;
           setTimeout(() => {
             this.saved = false;
           }, 3000);
-        }
+        };
 
-        const file = new Blob([text], { type: 'text/plain' }),
-              link = URL.createObjectURL(file)
+        const file = new Blob([text], { type: "text/plain" }),
+          link = URL.createObjectURL(file);
 
-        this.$refs['download'].href = link
-        this.$refs['download'].click()
+        this.$refs["download"].href = link;
+        this.$refs["download"].click();
 
-        setTrue()
+        setTrue();
       } catch (e) {
         console.log(e);
       } finally {
-        this.saving = false
+        this.saving = false;
       }
     }
   }
