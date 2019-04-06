@@ -14,9 +14,8 @@
               rel="noopener"
               href="https://github.com/gustavoquinalha/design-tokens-generator"
               target="_blank"
-              class="btn btn-white btn-outline"
+              class="link"
             >
-              <span class="text">Github</span>
               <i class="fab fa-github"></i>
             </a>
           </div>
@@ -42,6 +41,13 @@ a {
   text-decoration: none;
 }
 
+.link {
+  font-size: 1.7rem;
+  &:hover {
+    transform: scale(1.1, 1.1)
+  }
+}
+
 .menu__relative {
   height: $menu-height;
 }
@@ -59,16 +65,6 @@ a {
 .menu__block {
   height: $menu-height;
 }
-
-.fa-github {
-  display: none;
-}
 @media (max-width: $media-query-medium) {
-  .fa-github {
-    display: block;
-  }
-  .btn .text {
-    display: none;
-  }
 }
 </style>
