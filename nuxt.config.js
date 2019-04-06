@@ -48,7 +48,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'intro.png'
+        content: '	https://quinalha.me/design-tokens-generator/intro.png'
       },
       {
         hid: 'og:image:alt',
@@ -79,7 +79,7 @@ export default {
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: 'intro.png'
+        content: 'https://quinalha.me/design-tokens-generator/intro.png'
       },
       {
         hid: 'twitter:image:alt',
