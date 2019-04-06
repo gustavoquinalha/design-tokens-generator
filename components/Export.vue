@@ -1,5 +1,6 @@
 <template>
   <div class="export" sticky-container>
+    <a ref="download" target="_blank" href="" download="tokens.scss"></a>
     <div class="btn-show-result">
       <button class="btn" @click="toogleResult()">Export SASS</button>
     </div>
@@ -31,6 +32,10 @@
           <i class="fas fa-copy"></i>
         </button>
 
+        <button class="btn btn-save" style="right: 200px;" :class="{saved: saved}" @click="save()" :disabled="saving">
+          <i class="fas fa-copy"></i>
+        </button>
+
         <button class="btn btn-close" @click="toogleResult()">
           <i class="fas fa-times"></i>
         </button>
@@ -40,11 +45,15 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
       copied: false,
-      result: false
+      result: false,
+      saving: false,
+      saved: false
     };
   },
   computed: {
@@ -65,11 +74,13 @@ export default {
       // for Internet Explorer
 
       function setTrue() {
-        ts.copied = true;
-        setTimeout(function() {
-          ts.copied = false;
-          console.log("te");
-        }, 3000);
+        if (!ts.saving) {
+          ts.copied = true;
+          setTimeout(function() {
+            ts.copied = false;
+            console.log("te");
+          }, 3000);
+        }
       }
 
       if (document.body.createTextRange) {
@@ -78,6 +89,7 @@ export default {
         range.select();
         document.execCommand("Copy");
         setTrue();
+        return range.toString();
       } else if (window.getSelection) {
         // other browsers
         var selection = window.getSelection();
@@ -87,6 +99,32 @@ export default {
         selection.addRange(range);
         document.execCommand("Copy");
         setTrue();
+        return selection.toString();
+      }
+    },
+    async save () {
+      try {
+        this.saving = true
+        const text = this.copy()
+
+        const setTrue = () => {
+          this.saved = true;
+          setTimeout(() => {
+            this.saved = false;
+          }, 3000);
+        }
+
+        const file = new Blob([text], { type: 'text/plain' }),
+              link = URL.createObjectURL(file)
+
+        this.$refs['download'].href = link
+        this.$refs['download'].click()
+
+        setTrue()
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.saving = false
       }
     }
   }
