@@ -35,9 +35,7 @@
   .box-content {
     height: calc(100vh - #{$menu-height} - #{$footer-height} - 60px);
   }
-}
 
-@media (max-width: $media-query-medium) {
   .box-content {
     padding: $size4;
     border: none;
@@ -112,7 +110,57 @@
 @media (max-width: $media-query-large) {
   .sidebar {
     flex-basis: 100%;
-    display: none;
+  }
+
+  .box-content {
+    height: auto;
+    margin: $menu-height 0;
+    margin-bottom: $menu-height + 20px
+  }
+
+  .sidebar-list {
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
+    padding: $size1;
+    padding-top: $size3;
+    position: fixed;
+    top: $menu-height;
+    left: 0;
+    z-index: 800;
+    background: $black;
+    color: $white;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  .title {
+    position: fixed;
+    top: 55px;
+    left: $size2;
+    z-index: 801;
+  }
+
+  .sidebar-item {
+    width: fit-content;
+    white-space: nowrap;
+    padding: 0 $size2;
+    border-radius: $radius;
+    margin-right: $size2;
+
+    &.active {
+      background: $white;
+      color: $black;
+
+      &:after {
+        display: none;
+      }
+    }
   }
 }
 
@@ -124,5 +172,12 @@
 .box-subtitle {
   .subtitle {
     font-size: 32px;
+  }
+}
+
+@media (max-width: $media-query-small) {
+  .box-content {
+    margin: $size6 0;
+    margin-bottom: $menu-height;
   }
 }

@@ -90,4 +90,10 @@ export default {
 .btn-checkbox {
   margin-top: $size3;
 }
+
+@media (max-width: $media-query-large) {
+  .btn-checkbox {
+    margin-top: 0;
+  }
+}
 </style>
