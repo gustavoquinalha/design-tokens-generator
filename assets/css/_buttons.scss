@@ -2,21 +2,20 @@
 .btn {
   cursor: pointer;
   font-size: 14px;
-  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   text-decoration: none;
   transition: 0.3s;
-  border-radius: $radius;
+  border-radius: 200px;
   white-space: nowrap;
   font-weight: 700;
   vertical-align: middle;
   user-select: none;
   background: $black;
   color: $white;
-  padding: 0 20px;
+  padding: 10px 40px;
   outline: none;
   border: 2px solid $black;
   will-change: contents;
@@ -31,6 +30,18 @@
     transform: scale(1.1, 1.1);
   }
 
+  &.btn-primary {
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+
+    &.btn-outline {
+      background: transparent;
+      color: $primary;
+      border: 2px solid $primary;
+    }
+  }
+
   &.btn-white {
     background: $white;
     color: $black;
@@ -41,6 +52,16 @@
       color: $white;
       border: 2px solid $white;
     }
+  }
+
+  &.btn-sm {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  &.btn-lg {
+    font-size: 40px;
+    padding: 20px 80px;
   }
 }
 

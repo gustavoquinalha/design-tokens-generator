@@ -100,7 +100,7 @@ export default {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Nunito:700,900'
+        href: 'https://fonts.googleapis.com/css?family=Montserrat:700,900'
       },
       {
         rel: 'stylesheet',

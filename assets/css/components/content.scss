@@ -49,8 +49,6 @@
 }
 
 
-
-
 .box-content {
   position: relative;
 }
@@ -61,8 +59,21 @@
   max-width: 800px;
   margin: 0 auto;
 
+  @keyframes teste {
+    0% {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
   &.selected {
     display: block;
+    animation: teste .3s;
   }
 }
 
@@ -149,8 +160,8 @@
   .sidebar-item {
     width: fit-content;
     white-space: nowrap;
-    padding: 0 $size2;
-    border-radius: $radius;
+    padding: 0 $size3;
+    border-radius: 200px;
     margin-right: $size2;
 
     &.active {
@@ -177,7 +188,7 @@
 
 @media (max-width: $media-query-small) {
   .box-content {
-    margin: $size6 0;
+    margin: $size7 0;
     margin-bottom: $menu-height;
   }
 }

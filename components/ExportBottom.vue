@@ -28,7 +28,7 @@
 
         <div class="box-export container align-center">
           <button
-            class="btn btn-white btn-save"
+            class="btn btn-sm btn-white btn-save"
             :class="{saved: saved}"
             @click="save()"
             :disabled="saving"
@@ -37,7 +37,7 @@
             <span>Save</span>
           </button>
 
-          <button class="btn btn-white btn-copy" :class="{copied: copied}" @click="copy()">
+          <button class="btn btn-sm btn-white btn-copy" :class="{copied: copied}" @click="copy()">
             <i class="fas fa-copy icon-margin-right"></i>
             <span>Copy</span>
           </button>

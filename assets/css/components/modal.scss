@@ -53,7 +53,9 @@
   background: $white;
   color: $black;
   border-color: $white;
-  padding: 0 $size3;
+  padding: 0;
+  width: $size5;
+  height: $size5;
 
   &:hover {
     background: $black;
