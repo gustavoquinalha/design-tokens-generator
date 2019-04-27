@@ -52,13 +52,14 @@
   right: $size3;
   background: $white;
   color: $black;
-  border-color: $white;
+  border-color: transparent;
   padding: 0;
   width: $size5;
   height: $size5;
 
   &:hover {
     background: $black;
+    border-color: transparent;
     color: $white;
   }
 }

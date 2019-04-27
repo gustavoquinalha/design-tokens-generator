@@ -33,7 +33,14 @@
   width: 100%;
   background: $white;
   color: $black;
+
+  &.form-control-sm {
+    height: $size5;
+    padding: 0 $size1;
+    font-size: 14px;
+  }
 }
+
 
 .form-group-block {
   .form-content {

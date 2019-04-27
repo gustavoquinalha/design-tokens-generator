@@ -92,29 +92,36 @@
   .sidebar-list {
     line-height: 2;
   }
+}
 
-  .sidebar-item {
-    position: relative;
-    cursor: pointer;
-    width: fit-content;
-    height: $size5;
+.sidebar-item {
+  position: relative;
+  cursor: pointer;
+  width: fit-content;
+  height: $size5 + 1px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  user-select: none;
 
-    &.active {
-      font-weight: bold;
+  .btn {
+    background: transparent;
+  }
 
-      &:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: -$size3;
-        width: $size2;
-        height: $size2;
-        background: $black;
-        border-radius: 50%;
-      }
+  &.active {
+    // color: $primary;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: -$size3;
+      width: $size2;
+      height: $size2;
+      background: $black;
+      border-radius: 50%;
     }
-
   }
 }
 

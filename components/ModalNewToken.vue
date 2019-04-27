@@ -18,7 +18,7 @@
           <div class="form-content">
             <div class="form-group full-width">
               <label class="label-control">Name</label>
-              <input type="text" class="form-control" v-model="token">
+              <input type="text" class="form-control" v-model="token" autofocus="true">
             </div>
 
             <div class="form-btn">

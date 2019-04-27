@@ -9,7 +9,12 @@
           v-bind:key="index"
           :class="{active : selected === index}"
         >
-          <div @click="selected = index" class="checkbox">{{token.name}}</div>
+          <div @click="selected = index" class="checkbox container align-items-center">
+            {{token.name}}
+            <button class="btn btn-white btn-box btn-box-sm" v-if="selected === index">
+              <i class="fas fa-trash" title="Remove token"></i>
+            </button>
+          </div>
         </li>
         <li>
           <Modal/>

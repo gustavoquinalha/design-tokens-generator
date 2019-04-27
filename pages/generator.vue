@@ -1,24 +1,24 @@
 <template>
-  <div class="size margin">
-    <Content/>
-    <!-- <Export/> -->
+  <div class>
+    <div class="size margin">
+      <Content/>
+    </div>
+    <imageExport/>
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import Content from "~/components/Content.vue";
-import Export from "~/components/Export.vue";
+import imageExport from "~/components/imageExport.vue";
 
 export default {
   components: {
     Content,
-    Export
+    imageExport
   },
   data() {
-    return {
-      name: "teste"
-    };
+    return {};
   }
 };
 </script>
