@@ -1,5 +1,6 @@
 <template>
   <div class="container container-content wrap">
+    <modalRemoveToken/>
     <div class="sidebar">
       <ul class="list-style-none sidebar-list">
         <li class="title">Tokens</li>
@@ -11,9 +12,6 @@
         >
           <div @click="selected = index" class="checkbox container align-items-center">
             {{token.name}}
-            <button class="btn btn-white btn-box btn-box-sm" v-if="selected === index">
-              <i class="fas fa-trash" title="Remove token"></i>
-            </button>
           </div>
         </li>
         <li>
@@ -32,7 +30,15 @@
         >
           <div class="content-block">
             <div class="box-subtitle">
-              <h2 class="subtitle">{{token.name}}</h2>
+              <h2 class="subtitle">
+                {{token.name}}
+                <button
+                  class="btn btn-box btn-box-sm margin-left-10"
+                  @click="$store.state.showModalRemoveToken = true"
+                >
+                  <i class="fas fa-trash" title="Remove token"></i>
+                </button>
+              </h2>
             </div>
 
             <div class="content-block-form">
@@ -89,10 +95,12 @@
 <script>
 import Modal from "~/components/ModalNewToken.vue";
 import Export from "~/components/ExportBottom.vue";
+import modalRemoveToken from "~/components/modalRemoveToken.vue";
 export default {
   components: {
     Modal,
-    Export
+    Export,
+    modalRemoveToken
   },
   data() {
     return {
@@ -100,6 +108,8 @@ export default {
     };
   },
   methods: {
+    removeToken() {},
+
     addNewToken(index) {
       this.$store.state.tokens = this.$store.state.tokens.map((token, i) => {
         if (index == i) {

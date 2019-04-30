@@ -253,7 +253,8 @@ export const state = () => ({
         }
       ]
     }
-  ]
+  ],
+  showModalRemoveToken: false
 })
 
 export const strict = false;

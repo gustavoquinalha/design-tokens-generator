@@ -34,7 +34,7 @@
             :disabled="saving"
           >
             <i class="fas fa-save icon-margin-right"></i>
-            <span>Save</span>
+            <span>.SASS</span>
           </button>
 
           <button class="btn btn-sm btn-white btn-copy" :class="{copied: copied}" @click="copy()">
@@ -50,7 +50,7 @@
     <div class="export">
       <div class="size margin container justify-content-end">
         <div class="btn-show-result">
-          <button class="btn" @click="toogleResult()">Export SASS</button>
+          <button class="btn" @click="toogleResult()">Export</button>
         </div>
       </div>
     </div>

@@ -3,19 +3,19 @@
     <div class="size margin">
       <Content/>
     </div>
-    <imageExport/>
+    <!-- <imageExport/> -->
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import Content from "~/components/Content.vue";
-import imageExport from "~/components/imageExport.vue";
+// import imageExport from "~/components/imageExport.vue";
 
 export default {
   components: {
     Content,
-    imageExport
+    // imageExport
   },
   data() {
     return {};
