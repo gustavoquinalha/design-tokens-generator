@@ -1,7 +1,9 @@
 <template>
   <div class="container container-content">
+
     <modalRemoveToken/>
     <modalRemoveTokenItem/>
+
     <div class="sidebar">
       <ul class="list-style-none sidebar-list">
         <li class="title">Tokens</li>
@@ -17,7 +19,7 @@
           >{{token.name}}</div>
         </li>
         <li>
-          <Modal/>
+          <ModalNewToken/>
         </li>
       </ul>
     </div>
@@ -100,16 +102,16 @@
 </template>
 
 <script>
-import Modal from "~/components/ModalNewToken.vue";
-import Export from "~/components/ExportBottom.vue";
-import modalRemoveToken from "~/components/modalRemoveToken.vue";
-import modalRemoveTokenItem from "~/components/modalRemoveTokenItem.vue";
+import ModalNewToken from "~/components/ModalNewToken.vue";
+import Export from "~/components/Export.vue";
+import ModalRemoveToken from "~/components/modalRemoveToken.vue";
+import ModalRemoveTokenItem from "~/components/modalRemoveTokenItem.vue";
 export default {
   components: {
-    Modal,
+    ModalNewToken,
     Export,
-    modalRemoveToken,
-    modalRemoveTokenItem
+    ModalRemoveToken,
+    ModalRemoveTokenItem
   },
   methods: {
     openRemove(index) {

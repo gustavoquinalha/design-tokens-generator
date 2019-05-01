@@ -1,7 +1,7 @@
 {
   "name": "design-tokens-generator",
   "version": "1.0.0",
-  "description": "My posh Nuxt.js project",
+  "description": "Create your Semantic Style Variables (Universal language for developers and designers)",
   "author": "gustavoquinalha",
   "private": true,
   "scripts": {
@@ -9,8 +9,6 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
@@ -20,9 +18,7 @@
     "cross-env": "^5.2.0",
     "nuxt": "^2.6.3",
     "tmp": "^0.1.0",
-    "vue-github-button": "^1.0.8",
-    "vue-github-buttons": "^3.1.0",
-    "vue-sticky-directive": "^0.0.8"
+    "vue-github-buttons": "^3.1.0"
   },
   "devDependencies": {
     "coffee-loader": "^0.9.0",

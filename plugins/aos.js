@@ -7,6 +7,6 @@ export default ({
 }) => {
   app.AOS = new AOS.init({
     disable: "phone",
-    duration: 600
+    once: true
   });
 };

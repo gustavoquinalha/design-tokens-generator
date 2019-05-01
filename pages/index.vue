@@ -29,7 +29,7 @@
 
 <script>
 import contributers from "~/components/home/contributers.vue";
-import footerHome from "~/components/Footer.vue";
+import footerHome from "~/components/home/Footer.vue";
 
 export default {
   components: {
