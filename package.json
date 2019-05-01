@@ -16,7 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cross-env": "^5.2.0",
-    "nuxt": "^2.4.0",
+    "nuxt": "^2.6.3",
     "tmp": "^0.1.0",
     "vue-sticky-directive": "^0.0.8"
   },
@@ -24,12 +24,13 @@
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.2",
     "fs": "0.0.1-security",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "nodemon": "^1.18.9",
     "nuxt-sass-resources-loader": "^2.0.5",
     "pug": "2.0.3",
     "pug-plain-loader": "^1.0.0",
     "push-dir": "^0.4.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "tar": "^4.4.8"
   }
 }

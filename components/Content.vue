@@ -1,6 +1,7 @@
 <template>
   <div class="container container-content wrap">
     <modalRemoveToken/>
+    <modalRemoveTokenItem/>
     <div class="sidebar">
       <ul class="list-style-none sidebar-list">
         <li class="title">Tokens</li>
@@ -8,9 +9,9 @@
           class="sidebar-item"
           v-for="(token, index) in $store.state.tokens"
           v-bind:key="index"
-          :class="{active : selected === index}"
+          :class="{active : $store.state.selected === index}"
         >
-          <div @click="selected = index" class="checkbox container align-items-center">
+          <div @click="$store.state.selected = index" class="checkbox container align-items-center">
             {{token.name}}
           </div>
         </li>
@@ -26,7 +27,7 @@
           class="form-group-block"
           v-for="(token, index) in $store.state.tokens"
           v-bind:key="index"
-          :class="{selected: selected === index}"
+          :class="{selected: $store.state.selected === index}"
         >
           <div class="content-block">
             <div class="box-subtitle">
@@ -52,6 +53,13 @@
                   <label class="label-control">{{token.name}} value</label>
                   <input type="text" class="form-control" v-model="x.value">
                 </div>
+
+                <button
+                  class="btn btn-box btn-box-sm margin-left-10"
+                  @click="openRemove(key)"
+                >
+                  <i class="fas fa-trash" title="Remove token"></i>
+                </button>
               </div>
 
               <div class="box-download">
@@ -96,20 +104,19 @@
 import Modal from "~/components/ModalNewToken.vue";
 import Export from "~/components/ExportBottom.vue";
 import modalRemoveToken from "~/components/modalRemoveToken.vue";
+import modalRemoveTokenItem from "~/components/modalRemoveTokenItem.vue";
 export default {
   components: {
     Modal,
     Export,
-    modalRemoveToken
-  },
-  data() {
-    return {
-      selected: 0
-    };
+    modalRemoveToken,
+    modalRemoveTokenItem
   },
   methods: {
-    removeToken() {},
-
+    openRemove(index) {
+      this.$store.state.selectedItem = index
+      this.$store.state.showModalRemoveTokenItem = true
+    },
     addNewToken(index) {
       this.$store.state.tokens = this.$store.state.tokens.map((token, i) => {
         if (index == i) {

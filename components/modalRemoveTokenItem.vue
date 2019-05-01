@@ -1,9 +1,9 @@
 <template>
   <div class>
-    <div class="blackdrop" :class="{show : $store.state.showModalRemoveToken === true}" @click="$store.state.showModalRemoveToken = false"></div>
-    <div class="modal" :class="{show : $store.state.showModalRemoveToken === true}">
+    <div class="blackdrop" :class="{show : $store.state.showModalRemoveTokenItem === true}" @click="$store.state.showModalRemoveTokenItem = false"></div>
+    <div class="modal" :class="{show : $store.state.showModalRemoveTokenItem === true}">
       <div class="modal-relative">
-        <button class="btn btn-close" @click="$store.state.showModalRemoveToken = false">
+        <button class="btn btn-close" @click="$store.state.showModalRemoveTokenItem = false">
           <i class="fas fa-times"></i>
         </button>
 
@@ -15,7 +15,7 @@
         <div class="content-block-form">
           <div class="form-content">
             <div class="form-btn">
-              <button class="btn btn-outline margin-right-10" @click="$store.state.showModalRemoveToken = false">Cancel</button>
+              <button class="btn btn-outline margin-right-10" @click="$store.state.showModalRemoveTokenItem = false">Cancel</button>
               <button class="btn" @click="removeToken">Remove</button>
             </div>
           </div>
@@ -34,16 +34,20 @@ export default {
   },
   computed: {
     name() {
-      return (this.$store.state.tokens.find((o, i) => i == this.$store.state.selected) || {}).name || ''
+      return (((this.$store.state.tokens.find((o, i) => {
+        return i == this.$store.state.selected
+      }) || {}).list || []).find((o, i) => {
+        return  i == this.$store.state.selectedItem
+      }) || {}).token || ''
     }
   },
   methods: {
     removeToken() {
       if (this.$store.state.tokens.length) {
-        this.$store.state.tokens.splice(this.$store.state.selected, 1)
-        this.$store.state.showModalRemoveToken = false
-        this.$store.state.selected = this.$store.state.selected >= this.$store.state.tokens.length ?
-          this.$store.state.tokens.length - 1 : this.$store.state.selected
+        this.$store.state.tokens.splice(this.$store.state.selectedItem, 1)
+        this.$store.state.showModalRemoveTokenItem = false
+        this.$store.state.selectedItem = this.$store.state.selectedItem >= this.$store.state.tokens.length ?
+          this.$store.state.tokens.length - 1 : this.$store.state.selectedItem
       }
     }
   }
