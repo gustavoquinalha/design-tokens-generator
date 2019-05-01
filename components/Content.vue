@@ -11,9 +11,10 @@
           v-bind:key="index"
           :class="{active : $store.state.selected === index}"
         >
-          <div @click="$store.state.selected = index" class="checkbox container align-items-center">
-            {{token.name}}
-          </div>
+          <div
+            @click="$store.state.selected = index"
+            class="checkbox container align-items-center"
+          >{{token.name}}</div>
         </li>
         <li>
           <Modal/>
@@ -51,15 +52,13 @@
 
                 <div class="form-group">
                   <label class="label-control">{{token.name}} value</label>
-                  <input type="text" class="form-control" v-model="x.value">
+                  <div class="form-relative">
+                    <input type="text" class="form-control" v-model="x.value">
+                    <button class="btn btn-box btn-box-sm margin-left-10" @click="openRemove(key)">
+                      <i class="fas fa-trash" title="Remove token"></i>
+                    </button>
+                  </div>
                 </div>
-
-                <button
-                  class="btn btn-box btn-box-sm margin-left-10"
-                  @click="openRemove(key)"
-                >
-                  <i class="fas fa-trash" title="Remove token"></i>
-                </button>
               </div>
 
               <div class="box-download">
@@ -114,8 +113,8 @@ export default {
   },
   methods: {
     openRemove(index) {
-      this.$store.state.selectedItem = index
-      this.$store.state.showModalRemoveTokenItem = true
+      this.$store.state.selectedItem = index;
+      this.$store.state.showModalRemoveTokenItem = true;
     },
     addNewToken(index) {
       this.$store.state.tokens = this.$store.state.tokens.map((token, i) => {

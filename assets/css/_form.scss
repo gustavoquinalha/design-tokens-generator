@@ -184,3 +184,9 @@
 .form-group.full-width {
   flex-basis: 100%;
 }
+
+.form-relative {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
