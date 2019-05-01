@@ -44,10 +44,11 @@ export default {
   methods: {
     removeToken() {
       if (this.$store.state.tokens.length) {
-        this.$store.state.tokens.splice(this.$store.state.selectedItem, 1)
+        this.$store.state.tokens.find((o, i) => {
+          return i == this.$store.state.selected
+        }).list.splice(this.$store.state.selectedItem, 1)
         this.$store.state.showModalRemoveTokenItem = false
-        this.$store.state.selectedItem = this.$store.state.selectedItem >= this.$store.state.tokens.length ?
-          this.$store.state.tokens.length - 1 : this.$store.state.selectedItem
+        this.$store.state.selectedItem = null
       }
     }
   }
