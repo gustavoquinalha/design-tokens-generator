@@ -139,8 +139,14 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    ['nuxt-sass-resources-loader', '@/assets/css/_variables.scss']
+    ['nuxt-sass-resources-loader', '@/assets/css/_variables.scss'],
+    '@nuxtjs/google-gtag'
   ],
+
+  'google-gtag': {
+    id: 'UA-88441841-3', // required
+    debug: true // enable to track in dev mode
+  },
 
   node: {
     fs: 'empty'
