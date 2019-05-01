@@ -254,7 +254,10 @@ export const state = () => ({
       ]
     }
   ],
-  showModalRemoveToken: false
+  showModalRemoveToken: false,
+  showModalRemoveTokenItem: false,
+  selected: 0,
+  selectedItem: 0
 })
 
 export const strict = false;

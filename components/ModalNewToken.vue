@@ -60,6 +60,7 @@ export default {
           }
         ]
       });
+      this.$store.state.selected = this.$store.state.tokens.length - 1
       this.token = "";
       this.tokenName = "";
       this.tokenValue = "";

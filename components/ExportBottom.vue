@@ -81,7 +81,6 @@ export default {
   },
   methods: {
     toogleResult() {
-      console.log("teste");
       this.result = !this.result;
     },
     copy() {
@@ -93,7 +92,6 @@ export default {
           ts.copied = true;
           setTimeout(function() {
             ts.copied = false;
-            console.log("te");
           }, 3000);
         }
       }
@@ -132,7 +130,6 @@ export default {
         this.$refs["download"].click();
         setTrue();
       } catch (e) {
-        console.log(e);
       } finally {
         this.saving = false;
       }
