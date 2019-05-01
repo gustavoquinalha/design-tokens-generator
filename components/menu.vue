@@ -5,7 +5,7 @@
         <div class="menu__block size margin container align-items-center justify-content-between">
           <div class="menu__logo">
             <a href="#" name="Design Tokens Generator">
-              <b>Design Tokens Generator</b>
+              <b data-aos="fade-up">Design Tokens Generator</b>
             </a>
           </div>
           <div class="menu__links">
@@ -15,6 +15,7 @@
               href="https://github.com/gustavoquinalha/design-tokens-generator"
               target="_blank"
               class="link"
+              data-aos="fade-up"
             >
               <i class="fab fa-github"></i>
             </a>

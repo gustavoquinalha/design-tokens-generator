@@ -108,7 +108,8 @@ export default {
         integrity: 'sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf',
         crossorigin: 'anonymous'
       }
-    ]
+    ],
+    script: []
   },
 
   /*
@@ -129,7 +130,7 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [{
-    src: '~/plugins/vue-sticky',
+    src: '~/plugins/aos',
     ssr: false
   }],
   router: {
@@ -140,6 +141,9 @@ export default {
    */
   modules: [
     ['nuxt-sass-resources-loader', '@/assets/css/_variables.scss'],
+    ['vue-github-buttons/nuxt', {
+      css: false
+    }],
     '@nuxtjs/google-gtag'
   ],
 

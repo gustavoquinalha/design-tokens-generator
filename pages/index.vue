@@ -1,28 +1,55 @@
 <template>
   <div class>
     <div class="header container align-center">
-      <div class="container-header container wrap-reverse align-center">
+      <div class="container-header container wrap align-center">
         <div class="text">
-          <p class="paragraph">Create your Design Tokens</p>
-          <h1>Design tokens are the minimum elements of the design system.</h1>
-          <nuxt-link to="/generator" class="btn btn-lg btn-primary">Create my Tokens</nuxt-link>
+          <div class="container column">
+            <div data-aos="fade-up" data-aos-delay="0">
+              <gh-btns-star slug="gustavoquinalha/design-tokens-generator" show-count></gh-btns-star>
+            </div>
+            <p class="paragraph" data-aos="fade-up" data-aos-delay="100">Create your Design Tokens</p>
+          </div>
+          <h1
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >Design tokens are the minimum elements of the design system.</h1>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <nuxt-link to="/generator" class="btn btn-lg btn-primary">Create my Tokens</nuxt-link>
+          </div>
         </div>
-        <div class="image container align-center">
+        <div class="image container align-center" data-aos="zoom-in" data-aos-delay="400">
           <img src="@/assets/image/girl.svg" alt>
         </div>
       </div>
     </div>
-    <div class="footer">
-      <div class="size margin">
-        <p>Design Tokens Generator</p>
-      </div>
-    </div>
+    <contributers/>
+    <footerHome/>
   </div>
 </template>
 
 <script>
+import contributers from "~/components/home/contributers.vue";
+import footerHome from "~/components/Footer.vue";
+
 export default {
-  components: {},
+  components: {
+    contributers,
+    footerHome
+  },
+  head: {
+    script: [
+      {
+        src: "https://unpkg.com/aos@2.3.1/dist/aos.js"
+      }
+    ],
+    link: [
+      {
+        rel: "stylesheet",
+        href: "https://unpkg.com/aos@2.3.1/dist/aos.css"
+      }
+    ]
+  },
+  plugins: [{ src: "~/plugins/aos", ssr: false }],
   data() {
     return {};
   }
@@ -34,6 +61,16 @@ export default {
 
 .header {
   min-height: calc(100vh - #{$menu-height});
+  position: relative;
+}
+
+h1 {
+  font-size: 64px;
+  transition: 0.3s;
+}
+
+.paragraph {
+  line-height: 1.5;
 }
 
 .container-header {
@@ -67,23 +104,26 @@ export default {
   }
 }
 
-.footer {
-  padding: 100px 0;
-  background: $black;
-  color: $white;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .container-header {
     .text,
     .image {
       width: 100%;
     }
-  }
 
-  .btn.btn-lg {
-    font-size: 32px;
-    padding: 20px 40px;
+    .image {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    min-height: auto;
+    padding: $size4 0;
+  }
+  h1 {
+    font-size: 46px;
   }
 }
 </style>

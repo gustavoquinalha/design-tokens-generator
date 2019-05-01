@@ -1,8 +1,12 @@
 <template>
   <div class="contributors">
-    <h3>By Contributors</h3>
-    <div class="container align-center container-contributors wrap">
-      <div class="box-contributor" v-for="(contributor, index) in contributors" v-bind:key="index">
+    <h3 v-if="text">By Contributors</h3>
+    <div class="container container-contributors wrap" :class="{'align-center': center}">
+      <div
+        class="box-contributor"
+        v-for="(contributor, index) in $store.state.contributors"
+        v-bind:key="index"
+      >
         <a
           :href="'https://github.com/'+contributor.github"
           target="_blank"
@@ -25,28 +29,23 @@
 <script>
 export default {
   data() {
-    return {
-      contributors: [
-        {
-          github: "gustavoquinalha",
-          image: "https://avatars1.githubusercontent.com/u/13446801?s=460&v=4"
-        },
-        {
-          github: "lucasfontesgaspareto",
-          image: "https://avatars3.githubusercontent.com/u/8084651?s=460&v=4"
-        },
-        {
-          github: "usuarioJapa",
-          image: "https://avatars1.githubusercontent.com/u/20959993?s=460&v=4"
-        }
-      ]
-    };
+    return {};
+  },
+  props: {
+    text: {
+      type: Boolean,
+      default: true
+    },
+    center: {
+      type: Boolean,
+      default: true
+    }
   },
   methods: {}
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 $size: 36px;
 

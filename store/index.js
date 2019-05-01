@@ -1,6 +1,5 @@
 export const state = () => ({
-  tokens: [
-    {
+  tokens: [{
       status: true,
       name: 'Font Family',
       list: [{
@@ -12,8 +11,7 @@ export const state = () => ({
     {
       status: true,
       name: 'Font Size',
-      list: [
-        {
+      list: [{
           token: 'font-size-01',
           value: '62px'
         },
@@ -252,6 +250,19 @@ export const state = () => ({
           value: '.8'
         }
       ]
+    }
+  ],
+  contributors: [{
+      github: "gustavoquinalha",
+      image: "https://avatars1.githubusercontent.com/u/13446801?s=460&v=4"
+    },
+    {
+      github: "lucasfontesgaspareto",
+      image: "https://avatars3.githubusercontent.com/u/8084651?s=460&v=4"
+    },
+    {
+      github: "usuarioJapa",
+      image: "https://avatars1.githubusercontent.com/u/20959993?s=460&v=4"
     }
   ],
   showModalRemoveToken: false,

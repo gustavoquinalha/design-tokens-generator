@@ -88,7 +88,7 @@
           </button>
         </div>
 
-        <Footer/>
+        <contributors/>
       </div>
     </div>
 
@@ -104,10 +104,10 @@
 
 <script>
 import axios from "axios";
-import Footer from "~/components/Footer.vue";
+import contributors from "~/components/contributors.vue";
 export default {
   components: {
-    Footer
+    contributors
   },
   data() {
     return {

@@ -1,34 +1,26 @@
 <template>
-  <div class="footer container align-center">
+  <div class="footer">
     <div class="size margin">
-      <div class="container column full-wdith align-center">
-        <div class>
-          <p class>Created with 💖</p>
-        </div>
-        <Contributors/>
-      </div>
+      <p data-aos="fade-up" data-aos-offset="-100">Design Tokens Generator</p>
     </div>
   </div>
 </template>
 
 <script>
-import Contributors from "~/components/contributors.vue";
-
 export default {
-  components: {
-    Contributors
-  },
+  components: {},
   data() {
     return {};
   }
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
 
 .footer {
-  color: $black;
-  padding-top: $size3;
+  padding: 100px 0;
+  background: $black;
+  color: $white;
 }
 </style>

@@ -6,7 +6,45 @@
 @import 'form.scss';
 @import 'components/modal.scss';
 
-h1 {
-  font-size: 64px;
-  font-weight: bold;
+.gh-button-container {
+  display: flex;
+  align-items: center;
+  transition: .3s;
+  will-change: contents;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: $size2;
+
+  a {
+    transition: .3s;
+    background: $black;
+    color: $white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    border-radius: 500px;
+    padding: 10px 20px;
+  }
+
+  .gh-button {
+    margin-right: $size1;
+
+    svg {
+      fill: $white;
+      margin-right: $size2;
+    }
+  }
+
+  &:hover {
+
+    a {
+      transform: scale(1.1, 1.1);
+    }
+
+    .gh-button {
+      border-color: $primary;
+      background: $primary;
+      margin-right: $size2 + $size1;
+    }
+  }
 }
