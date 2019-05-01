@@ -52,6 +52,7 @@ body {
 .code {
   position: relative;
   border-radius: $radius;
+  border-top-left-radius: 0;
   padding: $size6;
   background: $black;
   color: $white;
@@ -102,4 +103,20 @@ h6 {
 
 .margin-left-10 {
   margin-left: 10px;
+}
+
+@keyframes show {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.show-animation {
+  animation: show .3s backwards;
 }

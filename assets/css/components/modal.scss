@@ -36,7 +36,7 @@
   }
 
   &.show {
-    top: $size7;
+    top: $size5 + $size3;
     visibility: visible;
   }
 }
@@ -89,10 +89,6 @@
 
   .box-subtitle {
     margin-bottom: 0;
-  }
-
-  .modal.show {
-    top: $menu-height - $size2;
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container container-content wrap">
+  <div class="container container-content">
     <modalRemoveToken/>
     <modalRemoveTokenItem/>
     <div class="sidebar">

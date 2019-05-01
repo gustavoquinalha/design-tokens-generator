@@ -12,21 +12,47 @@
           <span class="subtitle text-align-center">Export SASS</span>
         </div>
 
-        <div class="modal-content relative code" id="divContent">
-          <code
-            v-for="(token, index) in $store.state.tokens"
-            v-bind:key="index"
-            v-show="token.status"
-          >
-            <span class="paragraph">{{'//' + token.name}}</span>
-            <div v-for="(x, index) in token.list" v-bind:key="index">
-              ${{x.token}}: {{x.value}};
-              <br>
+        <div class="modal-export">
+          <div class="tab-container">
+            <div class="tab-item" :class="{active: actived==='sass'}" @click="actived = 'sass'">SASS</div>
+            <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div>
+          </div>
+
+          <div class="tab-content content-sass" v-show="actived==='sass'">
+            <div class="relative code" id="divContent">
+              <code
+                v-for="(token, index) in $store.state.tokens"
+                v-bind:key="index"
+                v-show="token.status"
+              >
+                <span class="paragraph">{{'//' + token.name}}</span>
+                <div v-for="(x, index) in token.list" v-bind:key="index">
+                  ${{x.token}}: {{x.value}};
+                  <br>
+                </div>
+              </code>
             </div>
-          </code>
+          </div>
+
+          <div class="tab-content" v-show="actived==='html'">
+            <div class="relative html-container">
+              <div
+                v-for="(token, index) in $store.state.tokens"
+                v-bind:key="index"
+                v-show="token.status"
+              >
+                <strong class="html-strong">{{token.name}}</strong>
+                <hr class="hr hr-black">
+                <div v-for="(x, index) in token.list" v-bind:key="index">
+                  <span class="html-token">{{'$' + x.token}}:</span>
+                  <span class="html-value">{{x.value}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="box-export container align-center">
+        <div class="box-export container align-center" v-show="actived==='sass'">
           <button
             class="btn btn-sm btn-white btn-save"
             :class="{saved: saved}"
@@ -43,13 +69,24 @@
           </button>
         </div>
 
+        <div class="box-export container align-center" v-show="actived==='html'">
+          <button
+            class="btn btn-sm btn-white btn-save"
+            :class="{saved: saved}"
+            :disabled="saving"
+          >
+            <i class="fas fa-save icon-margin-right"></i>
+            <span>Save HTML</span>
+          </button>
+        </div>
+
         <Footer/>
       </div>
     </div>
 
-    <div class="export">
+    <div class="export btn-show-result">
       <div class="size margin container justify-content-end">
-        <div class="btn-show-result">
+        <div class="show-animation">
           <button class="btn" @click="toogleResult()">Export</button>
         </div>
       </div>
@@ -69,7 +106,8 @@ export default {
       copied: false,
       result: false,
       saving: false,
-      saved: false
+      saved: false,
+      actived: "sass"
     };
   },
   computed: {

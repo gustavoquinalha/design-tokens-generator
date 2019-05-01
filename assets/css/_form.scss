@@ -177,8 +177,6 @@
     width: 100%;
     min-width: 100%;
   }
-
-
 }
 
 .form-group.full-width {
@@ -189,4 +187,57 @@
   position: relative;
   display: flex;
   align-items: center;
+}
+
+
+.tab-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tab-item {
+  padding: 10px 20px;
+  border: 2px solid $black;
+  border-bottom: 0;
+  border-right: none;
+  transition: .3s;
+  cursor: pointer;
+
+  &:last-child {
+    border-right: 2px solid $black;
+    border-top-right-radius: $radius;
+  }
+
+  &:first-child {
+    border-top-left-radius: $radius;
+  }
+
+  &.active {
+    background: $black;
+    color: $white;
+  }
+}
+
+.tab-content {
+  border: 2px solid $black;
+  border-radius: $radius;
+  border-top-left-radius: 0;
+  padding: $size6;
+  height: calc(60vh - 48px - 91px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.hr {
+  width: 40px;
+  max-width: 90%;
+  height: 4px;
+  border-radius: $radius;
+  background: $white;
+  border: none;
+  margin: 8px 0;
+
+  &-black {
+    background: $black;
+  }
 }

@@ -9,6 +9,7 @@
 .container-content {
   min-height: calc(100vh - #{$menu-height} - #{$footer-height});
   padding: $size5 0;
+  overflow: hidden;
 }
 
 .content {
@@ -25,6 +26,11 @@
 }
 
 @media (max-width: $media-query-large) {
+  .container-content {
+    flex-wrap: wrap;
+    overflow: initial
+  }
+
   .content {
     flex-basis: 100%;
     padding-right: 0;
@@ -59,21 +65,9 @@
   max-width: 800px;
   margin: 0 auto;
 
-  @keyframes teste {
-    0% {
-      transform: translateY(100px);
-      opacity: 0;
-    }
-
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
   &.selected {
     display: block;
-    animation: teste .3s;
+    animation: show .3s backwards;
   }
 }
 
@@ -81,6 +75,7 @@
   flex-basis: 25%;
   flex-grow: 1;
   padding: 0 $size6;
+  animation: show .3s backwards;
 
   .title {
     font-size: 12px;
