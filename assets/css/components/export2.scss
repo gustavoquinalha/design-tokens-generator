@@ -107,32 +107,6 @@
   }
 }
 
-.html-container {
-  font-weight: 300;
-  line-height: 2;
-
-  >div {
-    margin-bottom: 32px;
-  }
-
-  .html-strong {
-    color: $black;
-    font-weight: 900;
-  }
-
-  .html-value {
-    font-size: 14px;
-    background: $black;
-    color: $white;
-    padding: 4px 8px;
-    border-radius: $radius;
-  }
-
-  .html-token {
-    font-size: 14px;
-  }
-}
-
 .content-sass {
   padding: 0;
 

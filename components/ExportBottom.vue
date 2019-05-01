@@ -1,6 +1,8 @@
 <template>
   <div>
     <a ref="download" target="_blank" href download="tokens.scss"></a>
+    <a ref="download-html" target="_blank" href download="tokens.html"></a>
+
     <div class="blackdrop" :class="{show : result}" @click="result = !result"></div>
     <div class="modal modal-lg" :class="{show : result}">
       <div class="modal-relative">
@@ -9,43 +11,48 @@
         </button>
 
         <div class="box-subtitle margin-bottom-24">
-          <span class="subtitle text-align-center">Export SASS</span>
+          <span class="subtitle text-align-center">Export Design Tokens</span>
         </div>
 
         <div class="modal-export">
           <div class="tab-container">
             <div class="tab-item" :class="{active: actived==='sass'}" @click="actived = 'sass'">SASS</div>
-            <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div>
+            <!-- <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div> -->
           </div>
 
-          <div class="tab-content content-sass" v-show="actived==='sass'">
-            <div class="relative code" id="divContent">
-              <code
-                v-for="(token, index) in $store.state.tokens"
-                v-bind:key="index"
-                v-show="token.status"
-              >
-                <span class="paragraph">{{'//' + token.name}}</span>
-                <div v-for="(x, index) in token.list" v-bind:key="index">
-                  ${{x.token}}: {{x.value}};
+          <div id="divContent">
+            <div class="tab-content content-sass" v-show="actived==='sass'">
+              <div class="relative code">
+                <code
+                  v-for="(token, index) in $store.state.tokens"
+                  v-bind:key="index"
+                  v-show="token.status"
+                >
+                  <span class="paragraph">{{'//' + token.name}}</span>
+                  <div v-for="(x, index) in token.list" v-bind:key="index">
+                    ${{x.token}}: {{x.value}};
+                  </div>
                   <br>
-                </div>
-              </code>
+                </code>
+              </div>
             </div>
-          </div>
 
-          <div class="tab-content" v-show="actived==='html'">
-            <div class="relative html-container">
-              <div
-                v-for="(token, index) in $store.state.tokens"
-                v-bind:key="index"
-                v-show="token.status"
-              >
-                <strong class="html-strong">{{token.name}}</strong>
-                <hr class="hr hr-black">
-                <div v-for="(x, index) in token.list" v-bind:key="index">
-                  <span class="html-token">{{'$' + x.token}}:</span>
-                  <span class="html-value">{{x.value}}</span>
+            <div class="tab-content" v-show="actived==='html'">
+              <div class="relative html-container" style="font-weight: 300; line-height: 2;">
+                <div
+                  v-for="(token, index) in $store.state.tokens"
+                  v-bind:key="index"
+                  v-show="token.status"
+                  style="margin-bottom: 32px"
+                >
+                  <strong style="color: $black;font-weight: 900;">{{token.name}}</strong>
+                  <hr class="hr hr-black">
+                  <div v-for="(x, index) in token.list" v-bind:key="index">
+                    <span style="font-size: 14px;">{{'$' + x.token}}:</span>
+                    <span
+                      style="font-size: 14px; background: #000; color: #fff; padding: 4px 8px; border-radius: 4px;"
+                    >{{x.value}}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -74,6 +81,7 @@
             class="btn btn-sm btn-white btn-save"
             :class="{saved: saved}"
             :disabled="saving"
+            @click="saveHTML()"
           >
             <i class="fas fa-save icon-margin-right"></i>
             <span>Save HTML</span>
@@ -166,6 +174,26 @@ export default {
           link = URL.createObjectURL(file);
         this.$refs["download"].href = link;
         this.$refs["download"].click();
+        setTrue();
+      } catch (e) {
+      } finally {
+        this.saving = false;
+      }
+    },
+    async saveHTML() {
+      try {
+        this.saving = true;
+        const text = this.copy();
+        const setTrue = () => {
+          this.saved = true;
+          setTimeout(() => {
+            this.saved = false;
+          }, 3000);
+        };
+        const file = new Blob([text], { type: "text/plain" }),
+          link = URL.createObjectURL(file);
+        this.$refs["download-html"].href = link;
+        this.$refs["download-html"].click();
         setTrue();
       } catch (e) {
       } finally {
