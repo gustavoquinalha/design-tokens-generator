@@ -58,6 +58,7 @@ body {
   color: $white;
   transition: 0.3s;
   width: 100%;
+  user-select: all;
 
   &::-webkit-scrollbar {
     width: .8rem;

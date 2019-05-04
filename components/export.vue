@@ -2,6 +2,7 @@
   <div>
     <a ref="download" target="_blank" href download="tokens.scss"></a>
     <a ref="download-html" target="_blank" href download="tokens.html"></a>
+    <a ref="download-json" target="_blank" href download="tokens.json"></a>
 
     <div class="blackdrop" :class="{show : result}" @click="result = !result"></div>
     <div class="modal modal-lg" :class="{show : result}">
@@ -18,6 +19,7 @@
           <div class="tab-container">
             <div class="tab-item" :class="{active: actived==='sass'}" @click="actived = 'sass'">SASS</div>
             <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div>
+            <div class="tab-item" :class="{active: actived==='json'}" @click="actived = 'json'">JSON</div>
           </div>
 
           <div id="divContent">
@@ -29,9 +31,10 @@
                   v-show="token.status"
                 >
                   <span class="paragraph">{{'//' + token.name}}</span>
-                  <div v-for="(x, index) in token.list" v-bind:key="index">
-                    ${{x.token}}: {{x.value}};
-                  </div>
+                  <div
+                    v-for="(x, index) in token.list"
+                    v-bind:key="index"
+                  >${{x.token}}: {{x.value}};</div>
                   <br>
                 </code>
               </div>
@@ -55,6 +58,25 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <div class="tab-content content-sass" v-show="actived==='json'">
+              <pre class="relative code">
+{
+"designTokens": [
+  <code v-for="(token, index) in $store.state.tokens" v-bind:key="index" v-show="token.status">{
+    "name": "{{token.name}}",
+    "tokens": [
+      <div v-for="(x, index) in token.list" v-bind:key="index">      {
+        "token": "{{x.token}}",
+        "value": "{{x.value}}"
+      },
+    </div>
+    ]
+  },
+</code>]
+}
+              </pre>
             </div>
           </div>
         </div>
@@ -88,6 +110,18 @@
           </button>
         </div>
 
+        <div class="box-export container align-center" v-show="actived==='json'">
+          <button
+            class="btn btn-sm btn-white btn-save"
+            :class="{saved: saved}"
+            :disabled="saving"
+            @click="saveJSON()"
+          >
+            <i class="fas fa-save icon-margin-right"></i>
+            <span>Save JSON</span>
+          </button>
+        </div>
+
         <contributors/>
       </div>
     </div>
@@ -112,10 +146,10 @@ export default {
   data() {
     return {
       copied: false,
-      result: false,
+      result: true,
       saving: false,
       saved: false,
-      actived: "sass"
+      actived: "json"
     };
   },
   computed: {
@@ -190,7 +224,9 @@ export default {
             this.saved = false;
           }, 3000);
         };
-        const file = new Blob([`
+        const file = new Blob(
+          [
+            `
           <html>
             <head>
               ${document.head.innerHTML}
@@ -199,10 +235,13 @@ export default {
               ${this.$refs.tabHTML.innerHTML}
             </body>
           </html>
-        `], { type: "text/plain" })
-        
+        `
+          ],
+          { type: "text/plain" }
+        );
+
         const link = URL.createObjectURL(file);
-        
+
         this.$refs["download-html"].href = link;
         this.$refs["download-html"].click();
         setTrue();
@@ -210,7 +249,27 @@ export default {
       } finally {
         this.saving = false;
       }
-    }
+    },
+    async saveJSON() {
+      try {
+        this.saving = true;
+        const text = this.copy();
+        const setTrue = () => {
+          this.saved = true;
+          setTimeout(() => {
+            this.saved = false;
+          }, 3000);
+        };
+        const file = new Blob([text], { type: "text/plain" }),
+          link = URL.createObjectURL(file);
+        this.$refs["download-json"].href = link;
+        this.$refs["download-json"].click();
+        setTrue();
+      } catch (e) {
+      } finally {
+        this.saving = false;
+      }
+    },
   }
 };
 </script>
