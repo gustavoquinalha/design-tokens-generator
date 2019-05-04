@@ -64,10 +64,17 @@
               <pre class="relative code">
 {
 "designTokens": [
-  <code v-for="(token, index) in $store.state.tokens" v-bind:key="index" v-show="token.status">{
+  <code
+  v-for="(token, index) in $store.state.tokens"
+  v-bind:key="index"
+  v-show="token.status"
+>{
     "name": "{{token.name}}",
     "tokens": [
-      <div v-for="(x, index) in token.list" v-bind:key="index">      {
+      <div
+  v-for="(x, index) in token.list"
+  v-bind:key="index"
+>      {
         "token": "{{x.token}}",
         "value": "{{x.value}}"
       },
@@ -121,8 +128,6 @@
             <span>Save JSON</span>
           </button>
         </div>
-
-        <contributors/>
       </div>
     </div>
 
@@ -138,18 +143,14 @@
 
 <script>
 import axios from "axios";
-import contributors from "~/components/contributors.vue";
 export default {
-  components: {
-    contributors
-  },
   data() {
     return {
       copied: false,
-      result: true,
+      result: false,
       saving: false,
       saved: false,
-      actived: "json"
+      actived: "sass"
     };
   },
   computed: {
@@ -269,7 +270,7 @@ export default {
       } finally {
         this.saving = false;
       }
-    },
+    }
   }
 };
 </script>
