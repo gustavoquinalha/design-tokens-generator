@@ -17,7 +17,7 @@
         <div class="modal-export">
           <div class="tab-container">
             <div class="tab-item" :class="{active: actived==='sass'}" @click="actived = 'sass'">SASS</div>
-            <!-- <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div> -->
+            <div class="tab-item" :class="{active: actived==='html'}" @click="actived = 'html'">HTML</div>
           </div>
 
           <div id="divContent">
@@ -37,7 +37,7 @@
               </div>
             </div>
 
-            <div class="tab-content" v-show="actived==='html'">
+            <div class="tab-content" ref="tabHTML" v-show="actived==='html'">
               <div class="relative html-container" style="font-weight: 300; line-height: 2;">
                 <div
                   v-for="(token, index) in $store.state.tokens"
@@ -190,8 +190,19 @@ export default {
             this.saved = false;
           }, 3000);
         };
-        const file = new Blob([text], { type: "text/plain" }),
-          link = URL.createObjectURL(file);
+        const file = new Blob([`
+          <html>
+            <head>
+              ${document.head.innerHTML}
+            </head>
+            <body style="padding:40px;">
+              ${this.$refs.tabHTML.innerHTML}
+            </body>
+          </html>
+        `], { type: "text/plain" })
+        
+        const link = URL.createObjectURL(file);
+        
         this.$refs["download-html"].href = link;
         this.$refs["download-html"].click();
         setTrue();
