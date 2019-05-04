@@ -1,5 +1,20 @@
 <template>
   <div class>
+    <div class="ph">
+      <a
+        href="https://www.producthunt.com/posts/design-tokens-generator?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-design-tokens-generator"
+        target="_blank"
+      >
+        <img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=153319&theme=light"
+          alt="Design Tokens Generator - Create your Semantic Style Variables | Product Hunt Embed"
+          style="width: 250px; height: 54px;"
+          width="250px"
+          height="54px"
+        >
+      </a>
+    </div>
+
     <div class="header container align-center">
       <div class="container-header container wrap align-center">
         <div class="text">
@@ -58,6 +73,13 @@ export default {
 
 <style lang="scss" scoped>
 @import "~/assets/css/_variables.scss";
+
+.ph {
+  position: fixed;
+  bottom: 4px;
+  right: 8px;
+  z-index: 1000;
+}
 
 .header {
   min-height: calc(100vh - #{$menu-height});
