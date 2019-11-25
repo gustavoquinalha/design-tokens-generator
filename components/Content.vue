@@ -103,7 +103,7 @@
 
 <script>
 import ModalNewToken from "~/components/ModalNewToken.vue";
-import Export from "~/components/Export.vue";
+import Export from "~/components/export.vue";
 import ModalRemoveToken from "~/components/modalRemoveToken.vue";
 import ModalRemoveTokenItem from "~/components/modalRemoveTokenItem.vue";
 export default {
