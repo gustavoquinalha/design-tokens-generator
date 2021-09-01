@@ -31,6 +31,6 @@
     "pug-plain-loader": "^1.0.0",
     "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0",
-    "tar": "^4.4.8"
+    "tar": "^4.4.18"
   }
 }
